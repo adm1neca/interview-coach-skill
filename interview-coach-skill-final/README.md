@@ -19,7 +19,7 @@ This skill is command-driven with conditional logic: after scoring, it branches 
 - **Differentiation as a first-class dimension**: earned secrets and spiky POVs integrated into every workflow, not an optional add-on
 - **Self-assessment calibration**: tracks the gap between how you think you're doing and how you're actually doing
 - **Outcome tracking**: correlates practice scores with real interview results to verify the coaching is working
-- **Session continuity**: COACHING_STATE document maintains your storybank, scores, patterns, and progress across sessions — works over weeks or months of prep
+- **Session continuity**: persistent `coaching_state.md` file maintains your storybank, scores, patterns, and progress across sessions — works over weeks or months of prep
 - **Answer rewrites**: side-by-side before/after showing exactly what a 4-5 version of your answer looks like
 - **Interview loop awareness**: tracks which stories you've used at each company so later rounds build on earlier ones
 - **Cultural and linguistic awareness**: recognizes communication style differences and coaches adaptation, not replacement
@@ -28,24 +28,24 @@ This skill is command-driven with conditional logic: after scoring, it branches 
 
 ## Quick Start (5 minutes)
 
-### Option 1: Claude Projects (recommended for multi-week prep)
+### Option 1: Claude Code — Terminal or IDE (recommended)
 
-1. Clone or download this repo.
-2. In Claude, create a project named `Interview Coach`.
-3. Upload `SKILL.md` and the `references/` folder to project skills/knowledge.
-4. Upload your resume (or paste resume text).
-5. Run `/kickoff`.
-6. After each session, save the COACHING_STATE document the skill generates — add it to your project knowledge. This is how the skill maintains continuity across sessions.
+1. Clone or download this repo into your working directory.
+2. Add `SKILL.md` to your project instructions (e.g., reference it from `CLAUDE.md` or your IDE's equivalent).
+3. Upload or paste your resume.
+4. Run `/kickoff`.
 
-### Option 2: Single conversation
+The skill reads its `references/` files on demand and writes a `coaching_state.md` file to maintain continuity across sessions automatically — no manual saving required.
 
-1. Copy the contents of `SKILL.md`.
-2. Start a new Claude chat.
-3. Paste `SKILL.md` at the beginning.
-4. Upload or paste your resume.
-5. Run `/kickoff`.
+**Works with**: Claude Code (terminal), Claude Code (Claude App), Cursor, or any environment with file system access.
 
-For multi-session use: at the end of each session, the skill generates a COACHING_STATE document. Save it. At the start of your next session, paste it after SKILL.md. The skill picks up where you left off.
+### Option 2: Paste into conversation (limited)
+
+1. Copy the contents of `SKILL.md` and paste at the start of a Claude conversation.
+2. Upload or paste your resume.
+3. Run `/kickoff`.
+
+Note: Without file system access, the skill cannot read reference files or write persistent state. It will still work for single-session use but with reduced depth (no reference file lookup, no automatic session continuity).
 
 ---
 
@@ -246,7 +246,7 @@ Yes, but it is authored for Claude skill behavior. If using another model, copy 
 The skill is intentionally high-candor and evidence-based. It still uses strengths-first delivery and self-reflection before critique. It also periodically checks whether the coaching is landing and adapts if not.
 
 **How does it work across multiple sessions?**
-The skill generates a COACHING_STATE document that tracks your storybank, scores, patterns, drill progression, interview outcomes, and more. Save it after each session and bring it back next time. In Claude Projects, add it to project knowledge. In single conversations, paste it at the start.
+The skill writes a `coaching_state.md` file that tracks your storybank, scores, patterns, drill progression, interview outcomes, and more. At the start of each session, it reads this file and picks up where you left off. No manual saving or pasting required — it's automatic in any environment with file system access (Claude Code, Cursor, etc.).
 
 **What's different about v5?**
 v5 is a ground-up rethink. Session continuity via COACHING_STATE, adaptive triage with priority-stacked decision trees, 5-dimension scoring (with Differentiation), root cause diagnosis, worked examples as calibration anchors, answer rewrites showing concrete deltas, full mock interviews with named interviewer personas, drill progression with gating, post-offer negotiation, self-assessment calibration, outcome tracking, time-aware coaching, interview loop awareness, psychological readiness, signal-reading, gap-handling, cultural/linguistic awareness, and anti-pattern detection. The core shift: from "structured output" to "adaptive coaching that works over months."

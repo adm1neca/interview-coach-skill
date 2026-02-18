@@ -20,20 +20,20 @@ When instructions compete for attention, follow this priority order:
 
 ## Session State System
 
-This skill is designed to work across weeks or months of interview prep. Since conversations don't persist automatically, the skill uses a **COACHING_STATE** document to maintain continuity.
+This skill maintains continuity across sessions using a persistent `coaching_state.md` file.
 
 ### Session Start Protocol
 
 At the beginning of every session:
-1. Check if the user has provided a COACHING_STATE (pasted, uploaded, or available in project knowledge).
-2. **If COACHING_STATE exists**: Read it. Greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run /kickoff.
-3. **If no COACHING_STATE exists**: Treat as a new candidate. Suggest /kickoff.
+1. Read `coaching_state.md` if it exists.
+2. **If it exists**: Greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run /kickoff.
+3. **If it doesn't exist**: Treat as a new candidate. Suggest /kickoff.
 
 ### Session End Protocol
 
 At the end of every session (or when the user says they're done, or after any major workflow completes):
-1. Generate an updated COACHING_STATE document.
-2. Say: "Here's your updated coaching state. Save this file and bring it to our next session — paste it at the start or add it to your Claude Project."
+1. Write the updated coaching state to `coaching_state.md`.
+2. Confirm: "Session state saved. I'll pick up where we left off next time."
 
 ### COACHING_STATE Format
 
@@ -89,7 +89,7 @@ Last updated: [date]
 
 ### State Update Triggers
 
-The COACHING_STATE is updated (internally, offered to user at session end) whenever:
+Write to `coaching_state.md` whenever:
 - /kickoff creates a new profile
 - /stories adds, improves, or retires stories
 - /analyze, /practice, or /mock produces scores (add to Score History)
@@ -113,25 +113,32 @@ The COACHING_STATE is updated (internally, offered to user at session end) whene
 
 ## Command Registry
 
-Execute slash commands immediately when detected. All workflow details, step sequences, and output schemas are in `references/workflows.md`.
+Execute slash commands immediately when detected. Before executing, **read the reference files listed below** for that command's workflow, schemas, and output format.
 
-| Command | Purpose | Required Input |
-|---|---|---|
-| `/kickoff` | Initialize coaching profile | Resume or summary |
-| `/prep [company]` | Company + role prep brief | Job description (or partial context) |
-| `/analyze` | Transcript analysis and scoring | Transcript text |
-| `/practice` | Practice drill menu and rounds | Story or target competency |
-| `/mock [format]` | Full simulated interview (4-6 Qs) | Format + company/role context |
-| `/stories` | Build/manage storybank | At least one story to start |
-| `/concerns` | Generate likely concerns + counters | Target role and profile |
-| `/questions` | Generate tailored interviewer questions | Company/role context |
-| `/hype` | Pre-interview confidence and 3x3 plan | Upcoming interview context |
-| `/thankyou` | Thank-you note / follow-up drafts | Interview context |
-| `/progress` | Trend review, self-calibration, outcomes | Prior sessions/data |
-| `/negotiate` | Post-offer negotiation coaching | Offer details + context |
-| `/help` | Show command menu | None |
+| Command | Purpose |
+|---|---|
+| `/kickoff` | Initialize coaching profile |
+| `/prep [company]` | Company + role prep brief |
+| `/analyze` | Transcript analysis and scoring |
+| `/practice` | Practice drill menu and rounds |
+| `/mock [format]` | Full simulated interview (4-6 Qs) |
+| `/stories` | Build/manage storybank |
+| `/concerns` | Generate likely concerns + counters |
+| `/questions` | Generate tailored interviewer questions |
+| `/hype` | Pre-interview confidence and 3x3 plan |
+| `/thankyou` | Thank-you note / follow-up drafts |
+| `/progress` | Trend review, self-calibration, outcomes |
+| `/negotiate` | Post-offer negotiation coaching |
+| `/help` | Show this command list |
 
-If user types `/help`, show this command list with one-line descriptions.
+### File Routing
+
+When executing a command, read the required reference files first:
+
+- **All commands**: Read `references/workflows.md` for the command's workflow section.
+- **`/analyze`**: Also read `references/transcript-processing.md`, `references/rubrics-detailed.md`, and `references/examples.md`.
+- **`/practice`**, **`/mock`**: Also read `references/role-drills.md`.
+- **`/stories`**: Also read `references/storybank-guide.md` and `references/differentiation.md`.
 
 ## Evidence Tagging Standard
 
@@ -204,22 +211,6 @@ Use first match:
 4. Practice intent -> `/practice`
 5. Progress/pattern intent -> `/progress`
 6. Otherwise -> ask whether to run `/kickoff` or `/help`
-
----
-
-## Reference Files
-
-All detailed content is organized in `references/`:
-
-| File | Contents |
-|---|---|
-| `workflows.md` | All command workflows, step sequences, output schemas, and cross-cutting modules (gap-handling, signal-reading, psychological readiness, cultural awareness, differentiation) |
-| `rubrics-detailed.md` | Expanded scoring anchors, root cause taxonomy, seniority calibration guide |
-| `transcript-processing.md` | Transcript cleaning, quality gate, anti-pattern scan, multi-lens scoring, delta synthesis |
-| `storybank-guide.md` | Story management, earned secret extraction, rapid-retrieval drill protocol |
-| `differentiation.md` | Earned secrets, spiky POVs, differentiation integration points |
-| `role-drills.md` | Role-specific drill prompts, interviewer archetypes for panel simulation |
-| `examples.md` | Worked examples: scored answers at each level, triage decisions, practice debriefs, answer rewrites |
 
 ---
 

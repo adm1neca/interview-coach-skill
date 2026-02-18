@@ -28,15 +28,13 @@ Strongly recommended:
 - 2-3 target companies
 - 3-5 initial stories
 
-### Step 3: Initialize COACHING_STATE
+### Step 3: Initialize Coaching State
 
-Generate the initial COACHING_STATE document (see SKILL.md Session State System for format) with:
+Write the initial `coaching_state.md` file (see SKILL.md Session State System for format) with:
 - Profile section populated from Steps 1-2
 - Empty storybank (or populated if initial stories were provided)
 - Empty score history, outcome log, drill progression at Stage 1
 - Session log with kickoff entry
-
-Tell the user: "Save this COACHING_STATE file — it's how we maintain continuity across sessions."
 
 ### Time-Aware Coaching
 
@@ -69,9 +67,6 @@ Return exactly:
 1.
 2.
 3.
-
-## COACHING_STATE
-[Full initial state document]
 
 ## Next Commands
 - `/prep [company]`
@@ -136,7 +131,7 @@ If the candidate provides company culture context, integrate it into question pr
 
 ### Interview Loop Awareness
 
-If the COACHING_STATE shows previous rounds at the same company, this is a continuation prep, not a fresh start:
+If `coaching_state.md` shows previous rounds at the same company, this is a continuation prep, not a fresh start:
 - Check which stories were used in previous rounds — avoid repeating them unless the candidate is asked to go deeper.
 - Review what concerns likely surfaced from previous round analysis.
 - Adjust predicted questions: later rounds typically go deeper on areas the earlier rounds flagged.
@@ -598,7 +593,7 @@ A complete simulated interview (4-6 questions in sequence) with holistic feedbac
 1. Deliver questions one at a time. Wait for each response before the next.
 2. Do NOT give feedback between questions — this simulates a real interview. Note observations silently.
 3. Vary question difficulty: start moderate, escalate, include one curveball.
-4. Include at least one question targeting a known story gap (from storybank gap analysis or COACHING_STATE) to test gap-handling under realistic conditions.
+4. Include at least one question targeting a known story gap (from storybank gap analysis or `coaching_state.md`) to test gap-handling under realistic conditions.
 5. If the candidate fumbles a question, do what a real interviewer would: move on, follow up, or give a subtle redirect.
 6. Track: story diversity (did they use the same story twice?), energy trajectory, answer length distribution, time management.
 
@@ -758,7 +753,7 @@ Over time, correlate practice scores with real outcomes:
 - If practice scores and outcomes align → the system is calibrated. Keep going.
 - If outcomes are good but practice scores are mediocre → the candidate may perform better under real pressure than in practice. Adjust drill intensity.
 
-Log outcomes in the COACHING_STATE document (Score History and Outcome Log sections).
+Log outcomes in `coaching_state.md` (Score History and Outcome Log sections).
 
 ### Output Schema
 
