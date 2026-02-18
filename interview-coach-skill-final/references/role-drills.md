@@ -307,6 +307,62 @@ These drills simulate the scrutiny candidates face from specialists in their fie
 
 ---
 
+## Interviewer Archetypes (for Panel Simulation)
+
+When running `/practice panel` or `/mock` with panel format, deploy 2-3 of these distinct interviewer personas simultaneously. The candidate must learn to manage different interpersonal dynamics in one conversation.
+
+### The Friendly Ally
+- **Behavior**: Warm, encouraging, asks softball questions, builds rapport
+- **Purpose**: Tests whether candidate stays rigorous when given easy questions, or becomes lazy/casual
+- **Typical questions**: "That's fascinating — tell me more about that." / "What was the most rewarding part?"
+- **What they're actually evaluating**: Depth of substance even when not pressured; whether warmth makes the candidate drop their guard
+- **Danger for candidate**: Over-sharing, getting too casual, losing structure because the vibe is comfortable
+
+### The Skeptic
+- **Behavior**: Arms crossed, challenges every claim, asks "how do you know?" repeatedly
+- **Purpose**: Tests defensiveness vs. intellectual curiosity under pressure
+- **Typical questions**: "I'm not convinced — what evidence do you have?" / "That sounds like correlation, not causation." / "Your success metrics feel cherry-picked."
+- **What they're actually evaluating**: Can you engage with skepticism without getting defensive? Do you acknowledge limitations?
+- **Danger for candidate**: Getting defensive, over-explaining, losing confidence, or caving too quickly
+
+### The Silent Observer
+- **Behavior**: Takes notes, rarely speaks, minimal facial expressions, occasional nod
+- **Purpose**: Tests composure without feedback; creates discomfort that reveals nerves
+- **Typical questions**: Asks one or two precise, surgical questions late in the conversation
+- **What they're actually evaluating**: How does the candidate perform without validation? Do they fill silence with rambling?
+- **Danger for candidate**: Over-talking to fill the silence, getting anxious about lack of feedback, directing all attention to the more responsive panelists
+
+### The Off-Script Wanderer
+- **Behavior**: Asks unexpected questions unrelated to standard prep, goes on tangents, seems distracted
+- **Purpose**: Tests adaptability and real-time thinking
+- **Typical questions**: "Forget the project — what do you think about [industry trend]?" / "If you could redesign [company product] from scratch, what would you change?" / "What's something you believe that most people in your field disagree with?"
+- **What they're actually evaluating**: Can you think on your feet? Do you have depth beyond prepared stories? Do you have genuine intellectual curiosity?
+- **Danger for candidate**: Freezing on unexpected questions, trying to redirect back to prepared material instead of engaging
+
+### The Time-Pressured Exec
+- **Behavior**: Checks watch, speaks quickly, interrupts, wants bottom-line answers
+- **Purpose**: Tests ability to compress and prioritize under time pressure
+- **Typical questions**: "Give me the 30-second version." / "Skip the background — what was the outcome?" / "I have 5 minutes left — what's the one thing you want me to know?"
+- **What they're actually evaluating**: Clarity under pressure. Can you get to the point? Do you know what matters?
+- **Danger for candidate**: Rambling, starting with context instead of conclusions, failing to read the urgency signal
+
+### The Culture Guardian
+- **Behavior**: Friendly but probing on values, team dynamics, and how you treat people
+- **Purpose**: Tests cultural fit and interpersonal judgment
+- **Typical questions**: "Tell me about a time you disagreed with your manager." / "How did you handle someone on your team who was underperforming?" / "What kind of team culture do you create?"
+- **What they're actually evaluating**: Empathy, self-awareness, conflict resolution style, whether your values actually align
+- **Danger for candidate**: Giving "right" answers that sound performative, not demonstrating authentic values
+
+### Panel Simulation Protocol
+
+When running a panel drill:
+1. Assign 2-3 archetypes (vary the combination each time).
+2. Switch between personas naturally — don't announce "now the skeptic will ask."
+3. Create moments where two interviewers' styles conflict (e.g., the Ally is encouraging while the Skeptic challenges the same point).
+4. Debrief: How did the candidate manage competing dynamics? Did they play to one persona and neglect another? Did they read the room?
+
+---
+
 ## General Drill Guidelines
 
 1. **Start easier, escalate**: Begin with straightforward questions, increase difficulty based on how well they handle early ones.

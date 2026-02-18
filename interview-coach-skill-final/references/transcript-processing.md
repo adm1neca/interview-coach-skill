@@ -74,9 +74,37 @@ OUTPUT FORMAT:
 
 ---
 
+## Step 2.5: Anti-Pattern Scan
+
+Before scoring, scan the transcript against known failure patterns. This provides an objective checklist that doesn't rely on the coach to "notice" problems organically.
+
+### Detection Checklist
+
+| Anti-Pattern | Detection Heuristic | Severity | Fix Reference |
+|---|---|---|---|
+| **Rambling** | Any answer >3 minutes / >300 words without a check-in or pause | High | Constraint ladder drill |
+| **Verbal crutches** | Same filler phrase ("So basically...", "At the end of the day...") appears 3+ times across answers | Medium | Record and playback — awareness is often enough |
+| **"We" default** | >50% of action verbs in an answer use "we" instead of "I" | High | I/we audit drill |
+| **Never clarifies** | Candidate asks zero clarifying questions across entire interview | Medium | Question-before-answer drill |
+| **Conflict avoidance** | Stories about "challenges" contain no actual disagreement, tension, or failure | High | Tension-mining drill |
+| **Question dodging** | Answer addresses a related topic but not what was actually asked | High | Question-decoding drill |
+| **Over-claiming** | Impact claims without specific role, or "I" replacing obvious team effort | High | Constraint practice (add realistic limitations) |
+| **Jargon hiding** | >5 domain-specific terms per 100 words with no plain-language explanation | Medium | "Explain to a 10-year-old" drill |
+| **Front-loaded hedge** | Answer starts with "I think maybe...", "It's hard to say but...", "I'm not sure if..." | Medium | Opening line practice |
+| **Story recycling** | Same story used for 2+ different questions | Medium | Storybank gap analysis |
+| **Abrupt ending** | Answer stops without impact/outcome/takeaway — just trails off | Medium | "Land the plane" drill: practice the last 15 seconds |
+| **Monologue mode** | Answers average >2 minutes with no pauses, check-ins, or reads of interviewer signals | Medium | Signal-reading practice |
+| **Missing "so what"** | Story has actions but never connects to why it mattered | High | Impact chain drill |
+| **Defensive deflection** | When pressed on a weakness, redirects to strengths without acknowledging the gap | Medium | Gap-handling drill |
+| **Rehearsed robotics** | Answer sounds memorized — identical phrasing to previous practice, no adaptation to question nuance | Medium | Variation practice: same story, different framings |
+
+After scanning, include detected anti-patterns in the analysis output. Each detected pattern should reference which Q# triggered it and link to the specific fix.
+
+---
+
 ## Step 3: Multi-Lens Scoring
 
-Run the parsed transcript through four evaluative lenses, each revealing different insights.
+Run the parsed transcript through evaluative lenses. **Important**: Which lenses you run depends on the triage decision tree in SKILL.md. If a primary bottleneck is identified after initial scoring, scope the analysis accordingly rather than running all four lenses mechanically.
 
 ### Lens 1: Hiring Manager Perspective
 
@@ -97,24 +125,36 @@ Act as the hiring manager for this role.
 
 For each answer, score 1-5 on:
 - Substance
-- Structure  
+- Structure
 - Relevance
 - Credibility
+- Differentiation
 
 After each answer:
 - One concrete improvement (specific missing evidence, numbers, or tradeoffs)
+- Root cause pattern (if detected — see rubrics-detailed.md root cause taxonomy)
 - Would this answer move candidate forward? Y/N/Maybe + brief why
 
 SUMMARY TABLE:
-| Q# | Sub | Str | Rel | Cred | Avg | Forward? | Top Fix |
-|----|-----|-----|-----|------|-----|----------|---------|
+| Q# | Sub | Str | Rel | Cred | Diff | Avg | Forward? | Root Cause | Top Fix |
+|----|-----|-----|-----|------|------|-----|----------|------------|---------|
+
+SIGNAL-READING ANALYSIS:
+- Questions where follow-up indicated interest (positive signal):
+- Questions where interviewer moved on quickly (likely negative):
+- Questions where interviewer redirected (answer wasn't landing):
+- Missed signals: moments where the candidate should have adapted but didn't
+
+ANTI-PATTERNS DETECTED:
+[List from Step 2.5 scan with Q# references]
 
 FINAL OUTPUT:
 - Overall impression: Strong Hire / Hire / Mixed / No Hire
 - 3 strongest answers (why they worked)
-- 3 weakest answers (specific gaps)
+- 3 weakest answers (specific gaps + root cause patterns)
 - Biggest concern about this candidate
 - One-sentence justification for your decision
+- Primary bottleneck dimension → triage recommendation (see SKILL.md decision tree)
 ```
 
 ### Lens 2: Skeptical Specialist
@@ -224,15 +264,24 @@ INTERVIEW DELTA SHEET
 INTERVIEW: [Company] - [Role] - [Date]
 
 OVERALL SCORES:
-Substance: ___ | Structure: ___ | Relevance: ___ | Credibility: ___
+Substance: ___ | Structure: ___ | Relevance: ___ | Credibility: ___ | Differentiation: ___
+Calibration band: [early career / mid-career / senior / executive]
 Hiring Manager Assessment: Strong Hire / Hire / Mixed / No Hire
 
-3 FIXES FOR NEXT TIME:
+PRIMARY BOTTLENECK: [dimension]
+TRIAGE PATH: [coaching path chosen per SKILL.md decision tree]
+
+ANTI-PATTERNS DETECTED: [list with Q# references]
+
+3 FIXES FOR NEXT TIME (ordered by triage priority):
 1. [Specific behavior] - because [evidence from this interview]
+   Root cause: [pattern from taxonomy]
    Drill: [exact practice exercise]
 2. [Behavior] - because [evidence]
+   Root cause: [pattern]
    Drill: [exercise]
 3. [Behavior] - because [evidence]
+   Root cause: [pattern]
    Drill: [exercise]
 
 2 STORIES TO RETIRE (OR REWORK):
@@ -271,7 +320,7 @@ Add this interview's data:
 
 PATTERN METRICS:
 - % questions actually answered: ___
-- Average scores: Sub ___ | Str ___ | Rel ___ | Cred ___
+- Average scores: Sub ___ | Str ___ | Rel ___ | Cred ___ | Diff ___
 - Talk:listen ratio estimate: ___
 - Filler word rate: ___ per minute
 - Answer length consistency (std dev): ___

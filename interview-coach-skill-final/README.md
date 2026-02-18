@@ -1,233 +1,264 @@
-# Interview Coach - AI-Powered Interview Preparation
+# Interview Coach v5
 
-A Claude Skill that transforms Claude into a systematic interview coach informed by professional coaching methodology (ICF-aligned). Built from research with 30+ tech professionals on how they're using AI to land better jobs faster.
+A high-rigor Claude skill for interview coaching — not just prep. It adapts to what you actually need based on your patterns, not a one-size-fits-all assembly line.
 
-**Featured in:** [Lenny's Newsletter - "You should be using AI to land your next job"](LINK_TBD)
+This skill is command-driven with conditional logic: after scoring, it branches coaching based on what the data reveals about your specific bottlenecks.
 
 ---
 
-## What This Does
+## What You Get
 
-Instead of generic interview advice, this skill gives you:
-
-* **Coaching-informed approach** — self-reflection before feedback, strengths-first delivery, co-created action plans. Claude holds you as resourceful and capable, not as someone to be fixed.
-* **Slash commands** for instant access to any feature (`/prep`, `/analyze`, `/practice`, `/hype`, and more)
-* **LinkedIn integration** that enriches your profile and analyzes your interviewers
-* **Company-specific prep** with predicted questions, competitive positioning, and strategic counters
-* **Transcript analysis** that scores directly across multiple dimensions (no sycophantic praise, but strengths recognized)
-* **Practice drills**: constraint ladder, adversarial follow-ups, interruption handling, recovery tactics
-* **Storybank management** to track, improve, and retire your interview stories
-* **Differentiation coaching** to escape the "AI-polished middle" where everyone sounds the same
-* **Mindset and inner game** — addresses anxiety patterns, limiting beliefs, and avoidance behaviors
+- **Adaptive coaching** that triages your bottlenecks and branches accordingly — not the same assembly line for every candidate
+- **Five-dimension scoring**: Substance, Structure, Relevance, Credibility, and Differentiation — calibrated to your seniority level
+- **Evidence-enforced feedback**: every claim tagged to source, with a hard cap on low-confidence inferences
+- **Root cause diagnosis**: scores map to underlying patterns (status anxiety, narrative hoarding, conflict avoidance, etc.) with targeted fixes
+- **Storybank with rapid-retrieval drills**: stories you can actually access under pressure, not just a well-organized filing cabinet
+- **Full mock interviews**: 4-6 question simulated interviews with holistic arc feedback, not just individual answer scoring
+- **Psychological readiness**: pre-interview routines, mid-interview recovery, and post-interview processing
+- **Post-offer negotiation coaching**: scripts, strategy, and specific language for compensation conversations
+- **Differentiation as a first-class dimension**: earned secrets and spiky POVs integrated into every workflow, not an optional add-on
+- **Self-assessment calibration**: tracks the gap between how you think you're doing and how you're actually doing
+- **Outcome tracking**: correlates practice scores with real interview results to verify the coaching is working
 
 ---
 
 ## Quick Start (5 minutes)
 
-### Option 1: Claude Pro ($20/month) - Recommended
+### Option 1: Claude Projects (recommended)
 
-1. Download the skill files from this repo (or clone it)
-2. In Claude, create a new Project called "Interview Coach"
-3. Go to Project Settings → Skills → Upload the skill files
-4. Upload your resume to the project
-5. Type: `/setup`
+1. Clone or download this repo.
+2. In Claude, create a project named `Interview Coach`.
+3. Upload `SKILL.md` and the `references/` folder to project skills/knowledge.
+4. Upload your resume (or paste resume text).
+5. Run `/kickoff`.
 
-### Option 2: Claude Free
+### Option 2: Single conversation
 
-1. Copy the contents of `SKILL.md` from this repo
-2. In Claude, create a new conversation
-3. Paste the SKILL.md content at the start
-4. Upload your resume
-5. Type: `/setup`
+1. Copy the contents of `SKILL.md`.
+2. Start a new Claude chat.
+3. Paste `SKILL.md` at the beginning.
+4. Upload or paste your resume.
+5. Run `/kickoff`.
 
-*Note: Free tier won't retain context between conversations. You'll need to re-paste the skill each session.*
-
----
-
-## Slash Commands
-
-Type any of these commands at any time:
-
-| Command | What it does |
-|---------|--------------|
-| `/setup` | Initial setup — gather resume, LinkedIn, target role, preferences |
-| `/prep [company]` | Generate a 1-page prep brief for a specific company/role |
-| `/analyze` | Score and analyze an interview transcript |
-| `/practice` | Open the practice drill menu |
-| `/stories` | Review or add to your storybank |
-| `/hype` | Pre-interview confidence boost (60-second hype reel) |
-| `/concerns` | Generate likely concerns about your background + counters |
-| `/questions` | Generate smart questions to ask your interviewers |
-| `/thankyou` | Draft a post-interview thank you note |
-| `/progress` | Review your patterns and improvement areas |
-| `/help` | Show all available commands |
+If your environment does not persist context, repeat steps 2-3 per new session.
 
 ---
 
-## How to Use
+## Commands
 
-### First Time Setup
+| Command | Purpose | Typical Output |
+|---|---|---|
+| `/kickoff` | Setup profile, track, and preferences | Kickoff summary + first 7-day plan |
+| `/prep [company]` | Build role-specific prep brief (format-aware, culture-aware) | Format guidance, culture read, competencies, predicted Qs, story mapping |
+| `/analyze` | Analyze transcript with triage-based coaching | Per-answer 5-dimension scoring + decision tree + interview delta |
+| `/practice` | Run drill rounds (with progression gating) | Round debrief + self-assessment delta + targeted adjustment |
+| `/mock [format]` | Full simulated interview (4-6 Qs) | Holistic arc feedback, signal-reading notes, energy trajectory |
+| `/stories` | Build/manage storybank + rapid-retrieval drill | Story table + earned secrets + gap analysis + retrieval drill |
+| `/concerns` | Anticipate interviewer concerns | Concern-counter-evidence map |
+| `/questions` | Generate interviewer questions | 5 tailored, non-generic questions |
+| `/hype` | Pre-interview confidence + psychological warmup | 60-second reel + 3x3 sheet + focus cue |
+| `/thankyou` | Post-interview follow-up drafts | Thank-you note + variants |
+| `/progress` | Trends, self-calibration, outcome tracking | Self-assessment delta + outcome correlation + coaching meta-check |
+| `/negotiate` | Post-offer negotiation coaching | Offer analysis + strategy + scripts + specific language |
+| `/help` | Show command menu | Full command list |
 
-Type `/setup`. Upload your resume and LinkedIn profile URL. Tell Claude your target role. That's it.
+---
 
-**Why LinkedIn?** It provides richer context than a resume alone—career narrative, endorsements, recommendations, and how you present yourself publicly.
+## Fast Workflow Examples
 
-### Before an Interview
+### 1) Initial setup
 
+```text
+/kickoff
 ```
+
+Expected output:
+
+- Track selected (`Quick Prep` or `Full System`)
+- Profile snapshot (strength signals and concern areas)
+- 7-day action plan
+
+### 2) Before an interview
+
+```text
 /prep Stripe
 ```
 
-Then share the job description. Claude generates:
+Then provide:
 
-* What they optimize for (based on JD + values)
-* Your unique positioning
-* 7-10 predicted questions
-* Concerns about your background + how to counter them
-* Non-generic questions to ask them
-* **Know Your Interviewer cards** (if you share interviewer LinkedIn profiles)
+- Job description
+- Role/seniority
+- Optional interviewer names or profile links
 
-### After an Interview
+Expected output:
 
-```
+- `What They Optimize For`
+- `Your Best Positioning`
+- `Likely Concerns + Counters`
+- `Predicted Questions (7-10)`
+- `Story Mapping`
+- `Questions To Ask Them`
+
+### 3) After an interview
+
+```text
 /analyze
 ```
 
-Paste your transcript (use [Granola](https://granola.ai), [Otter](https://otter.ai), or [Tactiq](https://tactiq.io) to capture interviews).
+Then paste transcript text.
 
-Claude analyzes from multiple perspectives:
+Expected output:
 
-* Hiring manager (would they advance you?)
-* Skeptical specialist (where did you lack depth?)
-* Values alignment (which principles did you miss?)
-* Calibration (verbosity, hedging, jargon density)
+- Per-answer score blocks
+- `Scorecard`
+- `What Is Working`
+- `Top 3 Gaps To Close`
+- `Storybank Changes`
+- `Priority Move (Next 72 Hours)`
 
-You get a one-page "delta sheet" with exactly what to fix. **Expect harsh scores.** A 3/5 is average.
+### 4) Drill practice
 
-### Practice Mode
-
-```
+```text
 /practice
 ```
 
-Options include:
+Drills (in progression order — advance when you meet gating thresholds):
 
-* `/practice ladder` — Same story at 15s, 45s, 90s, 3min
-* `/practice pushback` — Adversarial follow-ups to your stories
-* `/practice role` — Deep pressure test for your function
-* `/practice panel` — Mock panel with different interviewer types
-* `/practice pivot` — Handle interruptions and topic shifts
+- `/practice ladder` — Constraint drills (30s, 60s, 90s, 3min)
+- `/practice pushback` — Handle skepticism and interruption
+- `/practice pivot` — Redirect when questions don't match prep
+- `/practice gap` — Handle "I don't have an example" moments
+- `/practice role` — Role-specific specialist scrutiny
+- `/practice panel` — Multiple interviewer personas
+- `/practice stress` — High-pressure simulation
+- `/practice retrieval` — Rapid-fire story matching
 
-### Pre-Interview Boost
+Expected output each round:
 
+- `Round Debrief`
+- `What Worked`
+- `Gaps`
+- `Scorecard` (5 dimensions)
+- `Self-Assessment Delta`
+- `Next Round Adjustment`
+
+### 5) Full mock interview
+
+```text
+/mock behavioral Stripe
 ```
-/hype
+
+Runs a complete 4-6 question interview simulation with holistic feedback on:
+
+- Overall impression and hiring signal
+- Energy trajectory and pacing across the full arc
+- Story diversity and selection quality
+- Signal-reading (did you adapt to interviewer cues?)
+- Per-question scoring + holistic patterns only visible across the full session
+
+### 6) Post-offer negotiation
+
+```text
+/negotiate
 ```
 
-Get a 60-second "hype reel" of your wins to read aloud, plus a 3x3 sheet (3 likely concerns + counters, 3 questions to ask).
+Then provide offer details, competing offers, and ideal outcome. Get:
 
-### Manage Your Stories
-
-```
-/stories
-```
-
-View, add, improve, or retire stories in your storybank. Claude tracks which stories you've used, how they performed, and when to retire them.
+- Market position analysis
+- Negotiation strategy with priority ordering
+- Exact scripts for the conversation
+- Fallback language for pushback
 
 ---
 
-## What's Included
+## Tracks
 
-```
-interview-coach-skill/
-├── SKILL.md                     # Core coaching instructions with slash commands
-├── interview-coach.skill        # Skill manifest file
+### Quick Prep
+
+Best when interview timeline is short.
+
+- Prep brief
+- Focused transcript analysis
+- Immediate next actions
+
+### Full System
+
+Best when running a multi-week search.
+
+- Storybank management with rapid-retrieval drills
+- Multi-lens transcript analysis with decision tree triage
+- Pattern and trend tracking with self-assessment calibration
+- Differentiation coaching integrated into all workflows
+- Full mock interview simulations
+- Outcome tracking (correlate practice with real results)
+- Post-offer negotiation coaching
+- Drill progression with gating thresholds
+
+Choose during `/kickoff`. You can switch later.
+
+---
+
+## Repository Structure
+
+```text
+interview-coach-skill-final/
+├── SKILL.md
+├── README.md
 └── references/
-    ├── rubrics-detailed.md      # Full 1-5 scoring scales
-    ├── role-drills.md           # PM, Eng, Design, Data Science, Research, Ops, Marketing drills
-    ├── differentiation.md       # Earned secrets, spiky POV, clarity under pressure
-    ├── transcript-processing.md # How to clean, parse, and analyze transcripts
-    └── storybank-guide.md       # Building and maintaining your story index
+    ├── rubrics-detailed.md
+    ├── role-drills.md
+    ├── differentiation.md
+    ├── transcript-processing.md
+    └── storybank-guide.md
 ```
 
 ---
 
-## Two Tracks: Quick Prep vs Full System
+## Best Results
 
-**Quick Prep** (~30 min per interview)
-
-* Company prep brief
-* Basic transcript scoring
-* Key improvements to focus on
-
-**Full System** (~2-3 hours initially, then compounds)
-
-* Storybank with gap analysis
-* Multi-lens scoring from 4 perspectives
-* Pattern tracking across interviews
-* Weekly reviews with trend analysis
-* Differentiation coaching
-
-Choose your track during `/setup`. You can upgrade later.
+1. Share a real resume (not a high-level summary).
+2. Include a full job description for `/prep` — and the interview format if you know it.
+3. Use real transcripts for `/analyze`. The more you give it, the better the triage.
+4. Keep a living storybank with `/stories`. Extract earned secrets for every story.
+5. Run `/progress` weekly — it tracks your self-assessment accuracy, not just scores.
+6. After real interviews, log outcomes. The system correlates practice scores with real results.
+7. Run `/mock` before important interviews. Individual drills build skills; mocks test the full arc.
 
 ---
 
-## Tips for Best Results
+## FAQ
 
-1. **Share your LinkedIn** — Richer context = better coaching
-2. **Share interviewer profiles** — Get "Know Your Interviewer" cards with rapport builders and likely focus areas
-3. **Use real transcripts** — Recording your interviews is the fastest way to improve
-4. **Expect harsh feedback** — The skill defaults to critical. A 3/5 is average.
-5. **Use slash commands** — They're faster than explaining what you want
+**Does this only work for tech roles?**
+No. Core workflows are role-agnostic; role drills include PM, Engineering, Design, Data Science, Research, Operations, and Marketing.
 
----
+**Can I use this outside Claude?**
+Yes, but it is authored for Claude skill behavior. If using another model, copy `SKILL.md` and adapt as needed.
 
-## Frequently Asked Questions
+**Why is the feedback direct?**
+The skill is intentionally high-candor and evidence-based. It still uses strengths-first delivery and self-reflection before critique. It also periodically checks whether the coaching is landing and adapts if not.
 
-**Q: Does this work for non-tech roles?**
-A: The core coaching works for any role. The role-specific drills currently cover PM, Engineering, Design, Data Science, Research, Operations, and Marketing.
-
-**Q: Can I use this with ChatGPT or Gemini?**
-A: The skill is designed for Claude, but you can adapt the prompts. Copy relevant sections from SKILL.md into your preferred AI.
-
-**Q: Why is the feedback so direct?**
-A: Because sycophantic praise doesn't help you improve. The candidates who landed jobs in our research explicitly asked AI to be adversarial. That said, the skill leads with what's working before addressing gaps, and invites you to self-assess before receiving feedback — so the directness lands constructively.
-
-**Q: Is it ethical to use AI for interview prep?**
-A: Using AI to prepare is no different than using books, coaches, or mock interviews. The skill helps you articulate your real experiences better—it doesn't fabricate credentials.
-
----
-
-## What's New in v3
-
-* **Coaching-informed delivery** — Self-reflection before feedback, strengths-first structure, co-created action plans, powerful questions over prescriptions
-* **Mindset layer** — Addresses anxiety, avoidance patterns, and limiting beliefs. Reframes interviews as conversations, not performances.
-* **Adaptive pacing** — More directive when urgent, more reflective when there's time
-* **Guided story exploration** — Reflective prompts surface richer stories than brainstorm lists
-* **Accountability structures** — Session check-ins, commitment invitations, progress reflection
-
-### Previously in v2
-
-* **Slash commands** — Instant access to any feature
-* **LinkedIn integration** — Richer candidate profiles, interviewer analysis
-* **Know Your Interviewer cards** — Background overlap, likely focus areas, rapport builders
-* **Practice sub-commands** — `/practice ladder`, `/practice pushback`, etc.
-* **Storybank management** — `/stories` menu for viewing, adding, improving, retiring
+**What's different about v5?**
+v5 adds adaptive triage (coaching branches based on your patterns), a 5th scoring dimension (Differentiation), root cause diagnosis, full mock interviews, drill progression with gating, post-offer negotiation, self-assessment calibration, outcome tracking, psychological readiness, signal-reading coaching, gap-handling frameworks, interviewer archetype simulation, and anti-pattern detection. The core philosophy shifted from "structured output" to "adaptive coaching" — the system now responds to what it observes, not just what you ask it.
 
 ---
 
 ## Contributing
 
-Found a bug? Have a suggestion? Open an issue or PR.
+Open an issue or PR with:
+
+- Repro steps
+- Current behavior
+- Expected behavior
+- Suggested fix (optional)
 
 ---
 
 ## Credits
 
-Created by [Noam Segal](https://www.linkedin.com/in/noamsegal/) based on research with 30+ tech professionals for [Lenny's Newsletter](https://www.lennysnewsletter.com/).
+Created by [Noam Segal](https://www.linkedin.com/in/noamsegal/).
 
 ---
 
 ## License
 
-MIT License - Use freely, attribution appreciated.
+MIT

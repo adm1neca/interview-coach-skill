@@ -33,6 +33,7 @@ Create a table with these columns:
 | **Impact** | Quantified outcome or explanation if not quantifiable |
 | **Domain** | Technical / Product / Business / People |
 | **Risk/Stakes** | What could have gone wrong? Why did it matter? |
+| **Earned Secret** | The counterintuitive insight only you learned from this experience |
 | **Strength** | How compelling/differentiated (1-5) |
 | **Last Used** | Date of most recent use in interview |
 | **Notes** | Performance notes, feedback received |
@@ -218,6 +219,7 @@ Then layer in:
 | **Impact** | Saved 3 engineering sprints; redirected effort to feature that drove 25% activation increase |
 | **Domain** | Product |
 | **Risk/Stakes** | Entire sales team wanted this feature; CEO had promised it to key customer |
+| **Earned Secret** | The fastest way to kill a feature is to let it succeed at small scale — it becomes politically unkillable before you have real data |
 | **Strength** | 5 |
 | **Last Used** | 2024-01-15 (Stripe PM interview) |
 | **Notes** | Landed very well. Interviewer asked 3 follow-ups, all positive. Use for prioritization Qs. |
@@ -242,3 +244,49 @@ Then layer in:
 - All stories from one job/era
 - No failure stories
 - Relying on 2-3 favorites repeatedly
+- No earned secrets extracted (stories are specific but not distinctive)
+
+---
+
+## Rapid-Retrieval Drill
+
+A well-organized storybank is useless if the candidate can't access it under pressure. The moment of truth is mid-interview: you hear a question you didn't expect and need to find the right story in 3 seconds. This drill trains that reflex.
+
+### Setup
+
+Requires: A storybank with 8+ indexed stories.
+
+### Protocol
+
+1. Coach throws 10 interview questions in rapid succession (one at a time).
+2. For each question, candidate has **10 seconds** to respond with:
+   - Story ID (e.g., "S007")
+   - Opening line (the first sentence they'd say in the interview)
+3. No full answers — this is about retrieval speed, not delivery quality.
+4. Mix question types: behavioral, situational, curveball, gap-testing.
+5. Include 1-2 questions where no story is a great fit (tests gap-handling instinct).
+
+### Scoring Per Round
+
+| Metric | Strong | Adequate | Needs Work |
+|---|---|---|---|
+| **Retrieval speed** | Instant (<3s) | Hesitant (3-7s) | Stuck (>7s or blank) |
+| **Match quality** | Strong fit for the question | Partial fit — could work with framing | Wrong story — doesn't address the question |
+| **Opening line** | Hooks attention, front-loads the headline | Functional but generic start | Fumbled, no clear entry point |
+
+### Debrief
+
+After 10 rounds:
+- Which questions caused the most hesitation? (signals retrieval gaps)
+- Did the candidate reach for the wrong story anywhere? (signals indexing issues)
+- Were there questions where no story fit? (signals storybank gaps — add to gap analysis)
+- What opening lines were strongest? (build on these patterns)
+
+### Progression
+
+- **Round 1**: Standard behavioral questions (warmup)
+- **Round 2**: Role-specific questions (harder matching)
+- **Round 3**: Curveball and gap-testing questions (stress test)
+- **Round 4**: Time-pressured — 5 seconds instead of 10
+
+Run this drill weekly until retrieval feels automatic. The storybank isn't real until you can use it under pressure.

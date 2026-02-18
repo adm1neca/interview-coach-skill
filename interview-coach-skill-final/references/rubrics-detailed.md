@@ -17,6 +17,16 @@ Use these expanded rubrics when doing deep analysis. The compact version in SKIL
 - Ask: "What would a skeptic say is missing from this evidence?"
 - Flag when impact is claimed without explaining the candidate's specific contribution
 
+**Root causes when stuck at 1-2:**
+- Candidate hasn't done the reflection work — they know what happened but haven't extracted what mattered
+- Conflict avoidance: stripping stories of tension, stakes, and difficulty makes evidence disappear
+- Impostor syndrome: downplaying real impact because they feel they don't deserve the credit
+
+**Root causes when stuck at 3:**
+- "Good enough" syndrome — candidate has specifics but stops before quantifying because it feels like bragging
+- Hasn't thought about alternatives considered — they know what they did, not why they chose it over other options
+- Missing the "so what" — evidence exists but isn't connected to business impact
+
 ## Structure (Narrative Clarity)
 
 | Score | Description | Example |
@@ -31,6 +41,15 @@ Use these expanded rubrics when doing deep analysis. The compact version in SKIL
 - Best answers front-load the headline: "The key learning was X. Here's how we got there..."
 - Tangents often signal the candidate is unsure what matters — help them identify the core
 - Practice the "30-second version" to force clarity on what's essential
+
+**Root causes when stuck at 1-2:**
+- Narrative hoarding: trying to cram everything into one answer because they're afraid of leaving out something important
+- No mental model for story structure — they've never been taught to think in setup → conflict → resolution → impact
+- Anxiety-driven stream of consciousness: stress breaks whatever structure they had in their head
+
+**Root causes when stuck at 3:**
+- Knows the STAR framework but applies it mechanically — transitions feel forced, not natural
+- Hasn't practiced at multiple time constraints — can deliver a 3-minute version but can't compress or expand
 
 ## Relevance (Question Fit)
 
@@ -47,6 +66,15 @@ Use these expanded rubrics when doing deep analysis. The compact version in SKIL
 - Common failure: using a "favorite" story that doesn't quite fit
 - Ask: "If the interviewer only remembers one thing, what should it be?"
 
+**Root causes when stuck at 1-2:**
+- Inability to identify the core of a question: the candidate hears a topic ("conflict") and defaults to their conflict story regardless of what specific aspect the question targets
+- Poor question decoding: doesn't distinguish between "tell me about a conflict" vs. "tell me about a conflict where you were wrong" vs. "how do you handle conflict with senior stakeholders"
+- Story-first thinking: starts from "which story do I want to tell?" instead of "what is this question actually asking?"
+
+**Root causes when stuck at 3:**
+- Right story, wrong framing: the experience is relevant but 30-40% of the answer is context that doesn't serve the question
+- Doesn't check mid-answer whether they're still on track — no internal "am I answering what they asked?" monitor
+
 ## Credibility (Believability)
 
 | Score | Description | Example |
@@ -62,6 +90,93 @@ Use these expanded rubrics when doing deep analysis. The compact version in SKIL
 - Third-party validation (quotes, awards, metrics from others) strengthens claims
 - Watch for "we" vs "I" confusion — interviewers want to know the candidate's specific role
 - Realistic timelines and resource constraints make stories more believable
+
+**Root causes when stuck at 1-2:**
+- Over-claiming / status anxiety: candidate feels a perceived gap in their background and compensates by inflating contributions. This actually *reduces* credibility — interviewers sense it immediately
+- Reflexive "we" framing: candidate obscures their individual contribution, often because they're uncertain about how much credit they can claim
+- Fabrication: making up or heavily embellishing details (this is a red flag, not a coaching gap — address directly)
+
+**Root causes when stuck at 3:**
+- Has the details but doesn't package them as proof — specific facts exist but aren't connected to a credibility chain (claim → action → evidence → validation)
+- Missing third-party signals: never quotes what others said about the work, never mentions recognition or adoption metrics
+
+## Differentiation (Uniqueness)
+
+| Score | Description | Example |
+|-------|-------------|---------|
+| 1 | Generic answer any prepared candidate could give | "I used data to make better decisions" — could be anyone |
+| 2 | Some specificity but relies on common frameworks | "I applied the RICE framework to prioritize" — correct but undifferentiated |
+| 3 | Real details present but no earned insight or defensible POV | "I built a dashboard that saved 10 hours/week" — specific but not distinctive |
+| 4 | Includes earned secrets or a spiky POV; sounds like a specific person | "I learned that the fastest way to kill a feature is to let it succeed at small scale — it becomes politically unkillable before you have real data" |
+| 5 | Unmistakably this candidate — earned secrets + defensible stance + unique framing | "After launching 12 features in 2 years, I developed a 'kill threshold' system. If a feature doesn't hit 40% adoption in 6 weeks, I kill it regardless of stakeholder enthusiasm. Three of those kills freed resources for our actual breakout product. Most PMs can't do this because they optimize for shipping, not for pruning." |
+
+**Coaching notes:**
+- Differentiation is what separates a Hire from a Strong Hire in competitive processes
+- The biggest enemy of differentiation is AI-polished prep — answers that sound "correct" but could be anyone's
+- Push candidates to find their earned secrets: "What do you know from this experience that most people in your role wouldn't know?"
+- Spiky POVs must be defensible, authentic, and backed by experience — not manufactured controversy
+
+**Root causes when stuck at 1-2:**
+- Over-reliance on frameworks and best practices — answering like a textbook instead of a practitioner
+- Fear of being wrong: candidates choose "safe" answers over distinctive ones because distinctive answers are debatable
+- Haven't done the reflection work to extract what's unique about their experience
+
+**Root causes when stuck at 3:**
+- Has real experience but presents it as straightforward execution, not as insight
+- Doesn't realize what makes their perspective unusual — it feels "obvious" to them because they lived it
+- Missing the spiky POV: has the facts but not the opinionated interpretation of what they mean
+
+---
+
+## Root Cause Taxonomy (Cross-Dimensional)
+
+Most interview failures trace back to a small number of root causes that manifest across multiple dimensions. When diagnosing, look for these patterns:
+
+| Root Cause | How It Manifests | Affected Dimensions | Targeted Fix |
+|---|---|---|---|
+| **Inability to identify question core** | Answers miss the point, wrong story selected | Relevance, Structure | Question-decoding drills: restate what the question is really asking before answering |
+| **Reflexive "we" framing** | Individual contribution unclear, credibility suffers | Credibility, Substance | "I/we" audit: go through every answer and replace "we" with specific individual actions |
+| **Conflict avoidance** | Stories lack tension, stakes, and difficulty | Substance, Differentiation | Tension-mining: for every story, identify the hardest moment and make it the centerpiece |
+| **Status anxiety / over-claiming** | Inflated claims that interviewers don't believe | Credibility, Differentiation | Constraint practice: add realistic limitations, timelines, and trade-offs to every claim |
+| **Narrative hoarding** | Answers run long, structure collapses under weight of detail | Structure, Relevance | Constraint ladder drill: force 30s, 60s, 90s versions to find what's essential |
+| **Fear of being wrong** | Generic, safe answers that sound like everyone else | Differentiation, Substance | Spiky POV practice: take a stance, defend it, practice being comfortable with disagreement |
+| **Anxiety/performance stress** | Structure breaks, retrieval fails, spiral after mistakes | Structure, all dimensions | Psychological readiness module: warmup routines, mid-interview recovery scripts |
+
+When scoring reveals a pattern, name the root cause explicitly: "This looks like [pattern X] — here's what typically drives it and here's the targeted drill."
+
+---
+
+## Seniority Calibration Guide
+
+Scoring expectations scale with career stage. A "4" does not mean the same thing for a new grad and a VP.
+
+### Early Career (0-3 years)
+- **Substance**: Specific examples with at least one metric. Depth may be narrow — that's expected.
+- **Structure**: Clear STAR format is sufficient. Sophisticated narrative arc not expected.
+- **Relevance**: Should answer the question asked, even if story scope is small.
+- **Credibility**: Honest about scope of contribution. Learning orientation is a credibility signal at this level.
+- **Differentiation**: Can come from intellectual curiosity, learning velocity, and unique perspectives on common experiences.
+
+### Mid-Career (4-8 years)
+- **Substance**: Quantified impact with alternatives considered. Should show decision-making, not just execution.
+- **Structure**: Smooth narrative flow with clear transitions. Should be able to compress and expand on demand.
+- **Relevance**: Story selection should be strategic — right story for the right question, not just "my best story."
+- **Credibility**: Clear individual contribution with team context. Third-party validation expected.
+- **Differentiation**: Genuine earned secrets from hands-on work. Should sound like a practitioner, not a student of best practices.
+
+### Senior/Lead (8-15 years)
+- **Substance**: Systems-level thinking — second-order effects, organizational impact, strategic framing.
+- **Structure**: Sophisticated narrative control. Can zoom in/out, adjust level of detail to audience.
+- **Relevance**: Answers should address both the literal question and the meta-question (what they're really evaluating).
+- **Credibility**: Comfortable with ambiguity in outcomes. Acknowledges what they'd do differently with hindsight.
+- **Differentiation**: Insights that reshape how the interviewer thinks about the problem. Pattern recognition across multiple experiences.
+
+### Executive (15+ years)
+- **Substance**: Business-level impact with P&L awareness, cross-functional influence, portfolio thinking.
+- **Structure**: Effortless — structure is invisible, feels like a conversation, but every element is deliberate.
+- **Relevance**: Every answer subtly reinforces a leadership thesis. Nothing is wasted.
+- **Credibility**: Radical ownership including failures. Specific about what they learned and how they evolved.
+- **Differentiation**: Coherent leadership philosophy backed by pattern recognition across many contexts. Unmistakable point of view on how to build/lead/create.
 
 ---
 
