@@ -307,6 +307,155 @@ These drills simulate the scrutiny candidates face from specialists in their fie
 
 ---
 
+## Technical Communication Drills
+
+These drills target the communication skills needed for system design, case study, and mixed-format interviews. They are **not domain-specific technical practice** — they coach how you communicate technical thinking, not what you know. Use alongside the Format Discovery Protocol and Technical Format Coaching Boundaries defined in `references/workflows.md`.
+
+See `references/workflows.md` for the `practice technical` menu entry and progression ladder placement.
+
+### Thinking Out Loud Drill
+
+**Setup**: Give the candidate an open-ended decision scenario — not a full system design problem, but a decision point that requires structured reasoning. Examples:
+
+- "Your team needs to decide between building a feature in-house or using a third-party service. Walk me through how you'd think about this decision."
+- "You've been asked to reduce page load time by 50%. Where do you start, and how do you decide what to prioritize?"
+- "Your team is debating whether to migrate to a new framework. Walk me through how you'd evaluate the decision."
+
+Adapt the scenario to the candidate's role and target company if available (from `coaching_state.md`).
+
+**What to evaluate** (communication, not correctness):
+
+- Did they state their assumptions before diving in?
+- Did they structure their approach before detailing it ("I'd think about this in three dimensions...")?
+- Did they narrate their reasoning ("I'm leaning toward X because...")?
+- Did they address tradeoffs explicitly and unprompted?
+- Did they acknowledge what they don't know?
+
+**Challenge dimensions:**
+
+- "You've been talking for 2 minutes and I still don't know your recommendation. What's your answer?" (tests ability to land a conclusion under pressure)
+- "You said you'd optimize for X. What are you giving up?" (tests tradeoff articulation)
+- "I disagree with your assumption about [thing they assumed]. What changes?" (tests adaptability when a premise is challenged)
+- "Can you summarize your approach in 30 seconds?" (tests compression — same skill as the constraint ladder, applied to technical thinking)
+
+**Scoring per response:**
+
+- Process visibility (could the interviewer follow your thinking?): 1-5
+- Structure (did you organize before detailing?): 1-5
+- Tradeoff awareness (did you name what you're sacrificing?): 1-5
+
+### Clarification-Seeking Drill
+
+**Setup**: Present an intentionally ambiguous prompt with no additional context. The goal is to evaluate whether the candidate scopes the problem before solving — a critical skill in system design interviews that most candidates skip.
+
+Examples:
+
+- "Design a notification system."
+- "Build a recommendation engine."
+- "Create a dashboard for the operations team."
+- "Improve the checkout flow."
+
+Give NO additional context. Wait silently. Evaluate what they do next.
+
+**What to evaluate:**
+
+- Did they ask clarifying questions before starting to solve? (most candidates don't — they jump straight in)
+- Quality of questions: scoping questions ("Who are the users? What scale?") vs. trivial questions ("What programming language?")
+- Did they state assumptions explicitly when they couldn't get answers? ("I'll assume we're talking about web and mobile, at the scale of about 10M users — let me know if that's wrong.")
+- Comfort with ambiguity: did they proceed productively, or freeze waiting for certainty?
+
+**Challenge dimensions:**
+
+- If they jump straight to solving: "Hold on — what problem are you solving, exactly? Who's it for? At what scale?" (forces them to recognize they didn't scope — don't be gentle about this, it's a make-or-break habit)
+- After they ask questions: "I can't tell you that. What would you assume and why?" (tests ability to proceed under ambiguity with transparent assumptions)
+- "You asked about users but not about constraints. Why?" (tests awareness of their own question gaps)
+- "You asked five questions in a row without starting. At some point you need to move forward with incomplete information. When is that point?" (tests the other extreme — over-clarifying as a stalling mechanism)
+
+**Scoring per response:**
+
+- Question quality (scoping vs. trivial): 1-5
+- Assumption transparency (stated vs. hidden): 1-5
+- Comfort with ambiguity (productive vs. paralyzed or overcorrecting): 1-5
+
+### Mode-Switching Drill
+
+**Setup**: This drill targets candidates preparing for technical+behavioral mix interviews. Start with a behavioral question about a technical decision, then pivot to technical discussion mid-answer, then pivot back to behavioral.
+
+Example sequence:
+
+1. Start behavioral: "Tell me about a time you had to make a difficult technical tradeoff."
+2. Mid-answer, pivot to technical: "Interesting — walk me through the technical approach you chose. What were the alternatives and why did you pick this one?"
+3. Pivot back to behavioral: "How did the team respond to that decision? Was there disagreement?"
+4. Pivot to forward-looking technical: "If you faced a similar problem today with different constraints, how would your approach change?"
+
+**What to evaluate:**
+
+- Speed of register shift: does the candidate switch fluidly, or fumble transitions?
+- Depth maintenance: do they maintain technical depth when in behavioral mode and behavioral warmth when in technical mode?
+- Integration: do the modes reinforce each other, or feel like two different candidates?
+- Energy consistency: does one mode visibly drain them more than the other?
+
+**Challenge dimensions:**
+
+- Rapid pivots: switch mode 3 times in 5 minutes without signposting
+- "You sound like a different person when you talk about the technical side. How do you bring that same energy to the people side?" (meta-feedback that reveals mode-switching patterns)
+- "That story was great, but I still don't understand the technical decision. Walk me through it like I'm an engineer on your team." (tests whether behavioral warmth comes at the cost of technical rigor)
+
+**Scoring per response:**
+
+- Mode-switching fluidity (seamless vs. fumbled): 1-5
+- Register appropriateness (depth in both modes): 1-5
+- Integration (modes reinforce each other vs. disconnected): 1-5
+
+### Tradeoff Articulation Drill
+
+**Setup**: Present a decision with no clear right answer. The point is not to find the "correct" answer — it's to practice making a decision defensible by naming what you're optimizing for, what you're giving up, and why.
+
+Examples:
+
+- "You can ship in 2 weeks with known technical debt, or in 6 weeks with a clean architecture. Walk me through your decision process."
+- "You have budget for either a senior hire or two junior hires. What do you choose and why?"
+- "Your team can build a feature that 80% of users want a little, or a feature that 20% of users want desperately. Which do you build?"
+- "You can optimize for latency or for cost. The business says both matter equally. How do you decide?"
+
+Adapt examples to the candidate's role and domain.
+
+**What to evaluate:**
+
+- Did they name the tradeoff explicitly, or treat it as if there's an obvious right answer?
+- Did they identify what they were optimizing for?
+- Did they acknowledge what they were giving up?
+- Did they tie the decision to context (team size, timeline, business stage) rather than abstract principles?
+- Did they show intellectual honesty about downsides, or sell their choice as if it has no cost?
+
+**Challenge dimensions:**
+
+- "Your manager wants the 2-week version. Your tech lead wants the 6-week version. What do you do?" (adds stakeholder complexity)
+- "A year later, the technical debt is causing production incidents. How do you think about your original decision?" (tests intellectual honesty and hindsight reasoning)
+- "What information would change your answer?" (tests decision framework quality — do they know what would flip their conclusion?)
+- "I would have made the opposite choice. Convince me." (tests ability to defend a position under direct challenge without getting defensive)
+
+**Scoring per response:**
+
+- Tradeoff naming (explicit vs. glossed over): 1-5
+- Context sensitivity (decision tied to situation vs. abstract principles): 1-5
+- Intellectual honesty (acknowledges downsides vs. sells the choice): 1-5
+
+### Role Adaptations for Technical Communication Drills
+
+The drills above are role-agnostic, but the scenarios should be adapted to each candidate's domain:
+
+- **Software Engineer**: Use architecture, infrastructure, and system design scenarios. Thinking Out Loud → "design a [system]" prompts. Clarification-Seeking → "build a service that handles [ambiguous requirement]."
+- **Product Manager**: Use prioritization, roadmap, and resource allocation scenarios. Tradeoff Articulation maps directly to roadmap decisions. Clarification-Seeking → "improve [product area]."
+- **Data Scientist**: Use methodology, model selection, and experiment design scenarios. Thinking Out Loud → "how would you measure [ambiguous metric]?" Clarification-Seeking → "build a model to predict [X]."
+- **Designer**: Use design system, UX architecture, and design critique scenarios. Thinking Out Loud → "redesign [flow]." Tradeoff Articulation → "user delight vs. development cost."
+- **Operations / Business Ops**: Use process design, tool selection, and systems improvement scenarios. Tradeoff Articulation → "build vs. buy" and "automate vs. manual" decisions.
+- **Marketing**: Use campaign strategy, channel allocation, and measurement scenarios. Tradeoff Articulation → "brand awareness vs. direct response" and "broad reach vs. targeted conversion."
+
+Pull from the candidate's target companies and roles (from `coaching_state.md`) to make scenarios specific. Generic scenarios build the skill; role-specific scenarios build confidence.
+
+---
+
 ## Interviewer Archetypes (for Panel Simulation)
 
 When running `practice panel` or `mock` with panel format, deploy 2-3 of these distinct interviewer personas simultaneously. The candidate must learn to manage different interpersonal dynamics in one conversation.

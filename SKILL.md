@@ -122,6 +122,7 @@ Write to `coaching_state.md` whenever:
     - When the user seems unsure what to do next or asks a vague question: "Not sure where to go from here? Type `help` to see everything we can work on."
     - Every ~3 sessions if they haven't used it: weave a light reminder into the session close.
     - Keep it natural — one sentence, not a sales pitch. Vary the wording so it doesn't feel robotic.
+11. **Name what you can and can't coach.** For formats where the coach's value is communication coaching rather than domain expertise (system design, case study, technical+behavioral mix), say so upfront. A coach who pretends to evaluate system design correctness is worse than one who clearly says "I'm coaching how you communicate your thinking, not whether your design is right." See Technical Format Coaching Boundaries in `references/workflows.md` for specifics.
 
 ## Command Registry
 
@@ -135,7 +136,7 @@ Execute commands immediately when detected. Before executing, **read the referen
 | `analyze` | Transcript analysis and scoring |
 | `debrief` | Post-interview rapid capture (same day) |
 | `practice` | Practice drill menu and rounds |
-| `mock [format]` | Full simulated interview (4-6 Qs) |
+| `mock [format]` | Full simulated interview (4-6 Qs). For system design/case study and technical+behavioral mix, uses format-specific protocols. |
 | `stories` | Build/manage storybank |
 | `concerns` | Generate likely concerns + counters |
 | `questions` | Generate tailored interviewer questions |
