@@ -187,9 +187,14 @@ This is hard but important. If after sustained effort, scores remain at 2-3 acro
    Success metric:
 
 ## Storybank Health
-- Strong stories (4-5):
-- Stories needing rework:
-- Missing story types:
+- Total stories: __ (target: 8-12)
+- Strong stories (4-5): __ (target: at least 60% of storybank)
+- Stories needing rework (1-3): __ [list with S### IDs]
+- Retirement candidates (below 3 after 2+ improvement attempts): __
+- Earned secret coverage: __ of __ stories have real earned secrets (not placeholders)
+- Competency coverage: [list critical gaps for target roles — competencies with no story or only weak stories]
+- Retrieval readiness: [has candidate run retrieval drill? last retrieval score?]
+- Assessment: [Healthy / Needs work / Critical gaps]
 
 ## Coaching Meta-Check
 - Is this feedback landing?

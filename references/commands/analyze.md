@@ -133,5 +133,13 @@ When rewriting:
 - Score confidence:
 - Data quality notes:
 
-**Next commands**: `practice`, `stories`, `progress`
+## Recommended Next Step
+[Prescribe ONE specific command based on the triage decision — not a generic menu. Examples:]
+[- Relevance bottleneck: "Your biggest gap is answering the wrong question. I'd recommend `practice pivot` to drill question-decoding — want to start now?"]
+[- Substance bottleneck: "You need stronger raw material. Let's run `stories improve S###` on your weakest story, or `stories add` to surface new ones."]
+[- Differentiation bottleneck: "Your answers are solid but generic. Let's run `stories` to extract earned secrets from your existing stories."]
+[- Storybank changes needed: "I flagged 2 stories to rework and 1 gap to fill. Want to jump into `stories` to handle those now?"]
+[- Strong performance: "Your scores are solid. Run `progress` to see how this compares to your trend, or `mock [format]` for a full simulation."]
+
+**Other commands**: `practice`, `stories`, `progress`, `concerns`
 ```

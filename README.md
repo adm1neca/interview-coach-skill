@@ -1,32 +1,28 @@
 # Interview Coach
 
-A high-rigor Claude skill for interview coaching — not just prep. It adapts to what you actually need based on your patterns, not a one-size-fits-all assembly line.
+A Claude skill that coaches you through your entire job search — from first resume review to post-offer negotiation. It scores your answers across five dimensions, diagnoses root causes behind weak spots, builds a storybank you can retrieve under pressure, and adapts its coaching to your specific patterns. Not a generic question bank. An adaptive system that gets sharper the more you use it.
 
-This skill is command-driven with conditional logic: after scoring, it branches coaching based on what the data reveals about your specific bottlenecks.
+Say `kickoff`, share your resume, and you're coaching in under 2 minutes.
 
 ---
 
-## What You Get
+## What It Does
 
-- **Adaptive coaching** that triages your bottlenecks and branches accordingly — not the same assembly line for every candidate
-- **Five-dimension scoring**: Substance, Structure, Relevance, Credibility, and Differentiation — calibrated to your seniority level
-- **Evidence-enforced feedback**: every claim grounded in a real source, with automatic pause when evidence runs thin
-- **Root cause diagnosis**: scores map to underlying patterns (status anxiety, narrative hoarding, conflict avoidance, etc.) with targeted fixes
-- **Storybank with rapid-retrieval drills**: stories you can actually access under pressure, not just a well-organized filing cabinet
-- **Full mock interviews**: 4-6 question simulated interviews with holistic arc feedback — behavioral, system design, case study, panel, and technical+behavioral mix formats
-- **Psychological readiness**: pre-interview routines, mid-interview recovery, and post-interview processing
-- **Post-offer negotiation coaching**: scripts, strategy, and specific language for compensation conversations
-- **Differentiation as a first-class dimension**: earned secrets and spiky POVs integrated into every workflow, not an optional add-on
-- **Self-assessment calibration**: tracks the gap between how you think you're doing and how you're actually doing
-- **Outcome tracking**: correlates practice scores with real interview results to verify the coaching is working
-- **Session continuity**: persistent `coaching_state.md` file maintains your storybank, scores, patterns, and progress across sessions — auto-saved, works over weeks or months of prep
-- **Answer rewrites**: side-by-side before/after showing exactly what a 4-5 version of your answer looks like
-- **Interview loop awareness**: tracks which stories you've used at each company so later rounds build on earlier ones
-- **Interviewer intelligence**: per-interviewer research from LinkedIn profiles — focus areas, rapport hooks, story recommendations
-- **Post-interview debrief**: rapid same-day capture while details are fresh, even without a transcript
-- **Company research**: lightweight fit assessment before committing to full prep
-- **Post-search retrospective**: archive your coaching journey and extract transferable skills when a search ends
-- **Cultural and linguistic awareness**: recognizes communication style differences and coaches adaptation, not replacement
+**Scoring and diagnosis** — Every answer scored on Substance, Structure, Relevance, Credibility, and Differentiation, calibrated to your seniority. Scores map to root causes (status anxiety, narrative hoarding, conflict avoidance) with targeted fixes, not just "do better."
+
+**Adaptive coaching** — After scoring, a decision tree triages your bottleneck and branches to the right drill. If Relevance is your gap, you get question-decoding practice. If Substance, you build raw material. The system doesn't cycle through the same sequence for every candidate.
+
+**Storybank** — Structured story management with full STAR text, earned secrets, strength ratings, and rapid-retrieval drills so you can access the right story under time pressure.
+
+**Practice and mocks** — 8-stage drill progression (constraint ladders, pushback handling, pivot drills, panel simulations, stress tests) plus full 4-6 question mock interviews in behavioral, system design, case study, panel, and technical+behavioral formats.
+
+**Interview lifecycle** — Company research, role-specific prep briefs with interviewer intelligence, same-day post-interview debrief, outcome tracking that correlates practice scores with real results, and post-offer negotiation coaching with exact scripts.
+
+**Session continuity** — A persistent `coaching_state.md` file tracks your storybank, scores, patterns, drill progression, and interview loops across sessions. Pick up where you left off, weeks later. Saves are automatic.
+
+**Differentiation** — Earned secrets and spiky POVs are a first-class dimension, not an afterthought. The system pushes you past "competent" toward "memorable."
+
+**Self-awareness** — Tracks the gap between your self-assessment and actual coach scores. Knows if you're an over-rater or under-rater, and adjusts coaching accordingly.
 
 ---
 
@@ -53,7 +49,7 @@ cp SKILL.md CLAUDE.md
 
 3. Open the folder in Claude Code on Desktop and say `kickoff`.
 
-The skill reads its reference files on demand and writes a `coaching_state.md` file to maintain continuity across sessions — no manual saving required.
+The coach will ask for your resume, target role, and timeline — then build your profile, assess your starting point, and give you a prioritized action plan. Everything saves automatically to `coaching_state.md` so you pick up where you left off next session.
 
 **Also works with**: Claude Code (terminal), Cursor, or any environment with file system access.
 
@@ -313,6 +309,9 @@ interview-coach-skill/
 ---
 
 ## FAQ
+
+**How is this different from asking ChatGPT for interview help?**
+Generic LLM interview help gives you the same advice regardless of your patterns. This system scores you on five dimensions, tracks your scores over time, diagnoses root causes behind weak spots, builds a storybank with retrieval drills, and adapts its coaching based on what the data reveals. It remembers your previous sessions, knows which stories you've already used at a company, and changes its approach when something isn't working. It's the difference between a textbook and a coach.
 
 **Does this only work for tech roles?**
 No. Core workflows are role-agnostic; role drills include PM, Engineering, Design, Data Science, Research, Operations, and Marketing.
