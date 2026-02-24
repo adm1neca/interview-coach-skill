@@ -255,7 +255,7 @@ Choose during `kickoff`. You can switch later.
 
 ```text
 interview-coach-skill/
-├── SKILL.md                            # Core skill — rename to CLAUDE.md to activate
+├── CLAUDE.md                           # Core skill
 ├── README.md                           # This file
 ├── LICENSE                             # MIT License
 ├── coaching_state.md                   # Created on first kickoff (persistent memory, auto-saved)
