@@ -18,7 +18,9 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 **Interview lifecycle** — Company research, role-specific prep briefs with interviewer intelligence, same-day post-interview debrief, outcome tracking that correlates practice scores with real results, and post-offer negotiation coaching with exact scripts.
 
-**Session continuity** — A persistent `coaching_state.md` file tracks your storybank, scores, patterns, drill progression, and interview loops across sessions. Pick up where you left off, weeks later. Saves are automatic.
+**Interview intelligence** — The system learns from your real interview experiences. Every transcript, debrief, and recruiter feedback adds to a personalized knowledge base: question patterns across companies, what works and what doesn't for you specifically, and feedback-outcome correlations. Over time, prep briefs are weighted by real questions you've seen, and progress reviews surface patterns only visible across multiple interviews.
+
+**Session continuity** — A persistent `coaching_state.md` file tracks your storybank, scores, patterns, drill progression, interview loops, and interview intelligence across sessions. Pick up where you left off, weeks later. Saves are automatic.
 
 **Differentiation** — Earned secrets and spiky POVs are a first-class dimension, not an afterthought. The system pushes you past "competent" toward "memorable."
 
@@ -65,7 +67,7 @@ The coach will ask for your resume, target role, and timeline — then build you
 | `analyze` | Analyze transcript with triage-based coaching | Per-answer 5-dimension scoring + decision tree + interview delta |
 | `debrief` | Post-interview rapid capture (same day) | Questions recalled, interviewer signals, stories used, coaching state updates |
 | `practice` | Run drill rounds (with progression gating) | Round debrief + self-assessment delta + targeted adjustment |
-| `mock [format]` | Full simulated interview (4-6 Qs) — behavioral, system design, case study, panel, technical+behavioral mix | Holistic arc feedback, signal-reading notes, energy trajectory |
+| `mock [format]` | Full simulated interview (4-6 Qs) — behavioral screen, deep behavioral, panel, bar raiser, system design/case study, technical+behavioral mix | Holistic arc feedback, signal-reading notes, energy trajectory |
 | `stories` | Build/manage storybank + rapid-retrieval drill | Story table + earned secrets + gap analysis + retrieval drill |
 | `concerns` | Anticipate interviewer concerns | Concern-counter-evidence map |
 | `questions` | Generate interviewer questions | 5 tailored, non-generic questions |
@@ -73,6 +75,7 @@ The coach will ask for your resume, target role, and timeline — then build you
 | `thankyou` | Post-interview follow-up drafts | Thank-you note + variants |
 | `progress` | Trends, self-calibration, outcome tracking | Self-assessment delta + outcome correlation + coaching meta-check |
 | `negotiate` | Post-offer negotiation coaching | Offer analysis + strategy + scripts + specific language |
+| `feedback` | Capture recruiter feedback, outcomes, corrections, context | State updates + next step suggestion |
 | `reflect` | Post-search retrospective + archive | Journey arc, breakthroughs, transferable skills, archived state |
 | `help` | Show command menu (context-aware) | Full command list + recommended next based on coaching state |
 
@@ -197,7 +200,7 @@ Expected output each round:
 mock behavioral Stripe
 ```
 
-Runs a complete 4-6 question interview simulation. Formats: behavioral, system design, case study, panel, technical+behavioral mix. Holistic feedback on:
+Runs a complete 4-6 question interview simulation. Formats: behavioral screen, deep behavioral, panel, bar raiser, system design/case study, technical+behavioral mix. Holistic feedback on:
 
 - Overall impression and hiring signal
 - Energy trajectory and pacing across the full arc
@@ -243,6 +246,7 @@ Best when running a multi-week search.
 - Drill progression with gating thresholds (8 stages + standalone retrieval)
 - Post-interview debrief and rapid capture
 - Outcome tracking (correlate practice with real results)
+- Interview intelligence — learns question patterns, what works/doesn't, and company-specific insights from your real interviews
 - Interview loop awareness across company rounds
 - Post-offer negotiation coaching
 - Post-search retrospective and archiving
@@ -275,6 +279,7 @@ interview-coach-skill/
     │   ├── thankyou.md
     │   ├── progress.md
     │   ├── negotiate.md
+    │   ├── feedback.md
     │   ├── reflect.md
     │   └── help.md
     ├── cross-cutting.md                # Shared modules: gap-handling, signal-reading, differentiation, cultural awareness, psychological readiness, cross-command dependencies
@@ -296,8 +301,9 @@ interview-coach-skill/
 4. Keep a living storybank with `stories`. Extract earned secrets for every story.
 5. Run `progress` weekly — it tracks your self-assessment accuracy, not just scores.
 6. After real interviews, log outcomes. The system correlates practice scores with real results.
-7. Run `mock` before important interviews. Individual drills build skills; mocks test the full arc.
-8. Use `debrief` the same day as a real interview — capture signals while they're fresh.
+7. When you hear back from a recruiter — good or bad — run `feedback` to capture it. The system learns from your real experiences over time.
+8. Run `mock` before important interviews. Individual drills build skills; mocks test the full arc.
+9. Use `debrief` the same day as a real interview — capture signals while they're fresh.
 
 ---
 

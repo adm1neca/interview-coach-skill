@@ -17,7 +17,7 @@ The value of `progress` scales with the data available. Before running the full 
 
 ### Sequence
 
-0. **Check Score History size.** If Score History exceeds 15 rows, run the archival protocol from SKILL.md: summarize the oldest entries into a Historical Summary narrative (preserving trend direction, inflection points, and what caused shifts per dimension), then keep only the most recent 10 rows as individual entries. Do the same for Session Log if it exceeds 15 rows. This keeps the coaching state file lean for long-running engagements.
+0. **Check Score History and Intelligence size.** If Score History exceeds 15 rows, run the archival protocol from SKILL.md: summarize the oldest entries into a Historical Summary narrative (preserving trend direction, inflection points, and what caused shifts per dimension), then keep only the most recent 10 rows as individual entries. Do the same for Session Log if it exceeds 15 rows. Also check Interview Intelligence archival thresholds (defined in SKILL.md): Question Bank at 30 rows, Effective/Ineffective Patterns at 10 entries, Recruiter/Interviewer Feedback at 15 rows, Company Patterns for closed loops. This keeps the coaching state file lean for long-running engagements.
 1. **Check data availability** (see minimum data thresholds above). Adapt the protocol to what's actually possible.
 2. Ask self-reflection first: "How do you think you're progressing? Rate yourself 1-5 on each dimension."
 3. Compare self-assessment to actual coach scores over time (this is the most valuable part).
@@ -90,6 +90,19 @@ When 3+ real interview outcomes exist, run a direct correlation analysis:
 
 **Present as a narrative, not a table:**
 > "You've done 5 real interviews. You advanced in 3 and were rejected from 2. Looking at the pattern: the 3 advances all came after sessions where your Differentiation was 4+. The 2 rejections both happened when your most recent practice had Differentiation at 2-3. For your target roles, standing out seems to matter more than being polished. Let's prioritize earned secrets and spiky POVs over structure refinement."
+
+### Intelligence-Enriched Analysis
+
+When Interview Intelligence data exists, enrich the progress review — but only when it adds insight beyond what dimension-level trends already show. Apply the light-touch rule: skip this section entirely if dimension-level trends tell the full story.
+
+**Question Type Performance** (requires 5+ Question Bank entries):
+Group Question Bank entries by competency. Show where the candidate is strong vs. where gaps persist: "Your leadership questions average 3.8, but prioritization questions average 2.6 across 4 instances. That's a specific gap worth targeting."
+
+**Feedback-Outcome Correlation** (requires 3+ Recruiter/Interviewer Feedback entries):
+Map recruiter/interviewer feedback to outcomes. Look for patterns: "Both rejections included feedback about unclear impact — that maps directly to your Substance scores."
+
+**Accumulated Patterns** (requires 3+ data points per pattern):
+Surface Effective and Ineffective Patterns that have enough evidence to be reliable. Present as actionable guidance: "Pattern confirmed across 4 interviews: when you lead with the counterintuitive choice, your Differentiation scores jump. Keep doing this."
 
 ### Graduation Criteria
 
@@ -167,6 +180,16 @@ This is hard but important. If after sustained effort, scores remain at 2-3 acro
 - Competitive-ready criteria: __ of 6 met (if applicable)
 - Assessment: [Not yet ready / Ready for interviews / Ready for competitive processes]
 - What's between you and ready: [specific gaps]
+
+## Question Type Performance (if 5+ Question Bank entries exist)
+- Strongest competency areas: [competency — avg score — count]
+- Weakest competency areas: [competency — avg score — count]
+- Targeting recommendation: [specific competency to drill, if gap is actionable]
+
+## Accumulated Patterns (if 3+ data points per pattern)
+- Confirmed effective patterns: [from Interview Intelligence]
+- Confirmed ineffective patterns: [from Interview Intelligence]
+- Feedback-outcome correlation: [if sufficient data]
 
 ## Pattern Signals
 - Repeating strengths:

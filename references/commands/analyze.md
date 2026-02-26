@@ -24,9 +24,9 @@ If a candidate drops a transcript without having run `kickoff` first, don't refu
 9. **Signal-reading analysis.** Scan the transcript for interviewer behavior patterns using the Signal-Reading Module in `references/cross-cutting.md`. Include observations in the per-answer analysis and in the overall debrief.
 10. **Question decode for low-Relevance answers.** For any answer scoring < 3 on Relevance, don't just say "you missed the point." Explain what the question was actually probing for: "This question about 'a time you failed' isn't testing whether you've failed — it's testing self-awareness, learning orientation, and honesty. A targeted answer would have focused on what you learned and how it changed your approach, not on the failure itself."
 11. **Proactive rewrite of the weakest answer.** Don't just offer a rewrite — do one automatically for the lowest-scoring answer. Show the original excerpt and the improved version side by side with annotations. Say: "Here's what your weakest answer could look like at a 4-5. I'll show the delta so the improvement is concrete — not to give you a script, but to make it tangible." Still offer rewrites of other answers on request.
-12. **Triage — identify primary bottleneck and branch:**
+12. **Triage — identify primary bottleneck and branch** using the Post-Scoring Decision Tree below.
 
-### Post-Scoring Decision Tree
+#### Post-Scoring Decision Tree (Step 12 detail)
 
 After scoring, identify bottleneck dimensions and branch. Most candidates have multiple weak dimensions — use the priority stack below to determine which to address first.
 
@@ -53,6 +53,11 @@ After scoring, identify bottleneck dimensions and branch. Most candidates have m
     - Calibration (skip if Substance < 3 — premature optimization)
 14. Synthesize into delta plan with triage-informed priorities.
 15. **Update Active Coaching Strategy in `coaching_state.md`.** Write the chosen coaching path, rationale, and pivot conditions. If an Active Coaching Strategy already exists, check whether this analysis confirms or contradicts it. If the data suggests a different bottleneck than the current strategy targets, **move the old approach to Previous approaches** (with brief reason for the change) before writing the new one: "Your previous coaching focus was Structure, but this transcript shows Structure at 4 while Differentiation is at 2. I'm updating the strategy to focus on Differentiation." Always preserve the history of what was tried and why it was abandoned — this prevents the coach from cycling back to strategies that already failed.
+16. **Update Interview Intelligence.** Extract each scored question to the Question Bank (date, company, role, round type, question, competency, score as 5-dim average, outcome). Then cross-reference with existing Question Bank data — but only surface cross-references when they're meaningful:
+    - Score trajectory on a repeated competency (3+ instances) — e.g., "Your Differentiation on leadership questions has gone 2.2 → 2.8 → 3.4 across three interviews."
+    - Same question type appearing at the same company across rounds
+    - A pattern that changes the coaching recommendation
+    Update Effective/Ineffective Patterns only when 3+ data points support the pattern. Update Company Patterns with question types observed and what seems to matter based on this interview.
 
 ### Per-Answer Format (for each analyzed answer)
 
@@ -62,6 +67,7 @@ After scoring, identify bottleneck dimensions and branch. Most candidates have m
 - What worked:
 - Biggest gap:
 - Root cause pattern (if detected):
+- Intelligence cross-reference (only when past data changes the coaching):
 - Tight rewrite direction:
 - Evidence:
 ```
@@ -128,6 +134,11 @@ When rewriting:
 ## Reflection Prompts
 - How does this feedback compare to your gut feeling about the interview?
 - Of the growth areas above, which feels most within your control?
+
+## Intelligence Updates
+- Questions added to Question Bank: [count]
+- Patterns observed: [new effective/ineffective patterns, or "not enough data yet"]
+- Company learning: [new observations about this company's interview patterns, or "first interview at this company"]
 
 ## Confidence
 - Score confidence:

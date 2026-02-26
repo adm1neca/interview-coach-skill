@@ -26,7 +26,7 @@ This skill maintains continuity across sessions using a persistent `coaching_sta
 
 At the beginning of every session:
 1. Read `coaching_state.md` if it exists.
-2. **If it exists**: Run the Timeline Staleness Check (see below). Then greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run kickoff. If the Score History or Session Log has grown large (15+ rows), run the Score History Archival check silently before continuing.
+2. **If it exists**: Run the Timeline Staleness Check (see below). Then greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run kickoff. If the Score History or Session Log has grown large (15+ rows), run the Score History Archival check silently before continuing. Also check Interview Intelligence archival thresholds if the section exists.
 3. **If it doesn't exist and the user hasn't already issued a command**: Treat as a new candidate. Suggest kickoff.
 4. **If it doesn't exist but the user has already issued a command** (e.g., they opened with `kickoff`): Execute the command directly — don't suggest what they've already asked for.
 
@@ -47,6 +47,12 @@ After any session (mid-session or end-of-session) where the candidate reveals pr
 ### Score History Archival
 
 When Score History exceeds 15 rows, summarize the oldest entries into a Historical Summary narrative and keep only the most recent 10 rows as individual entries. The summary should preserve: trend direction per dimension, inflection points (what caused jumps or drops), and what coaching changes triggered shifts. Run this check during `progress` or at session start when the file is large. Apply the same archival pattern to Session Log when it exceeds 15 rows — compress old sessions into a brief narrative, keep recent ones detailed. The goal is to keep the file readable and within reasonable context limits for months-long coaching engagements.
+
+**Interview Intelligence archival thresholds** (check during `progress` or session start):
+- Question Bank: 30 rows → summarize questions older than 3 months into Historical Intelligence Summary, keep 20 recent
+- Effective/Ineffective Patterns: 10 entries → consolidate to 3-5 summary patterns in Historical Intelligence Summary
+- Recruiter/Interviewer Feedback: 15 rows → summarize older feedback into Company Patterns, keep 10 recent
+- Company Patterns for closed loops (Status: Archived or Closed) → compress to 2-3 lines
 
 ### Timeline Staleness Check
 
@@ -106,6 +112,34 @@ Last updated: [date]
 |------|---------|------|-------|--------|-------|
 [rows — Result: advanced/rejected/pending/offer]
 
+## Interview Intelligence
+
+### Question Bank
+| Date | Company | Role | Round Type | Question | Competency | Score | Outcome |
+[Round Type: behavioral/technical/system-design/case-study/bar-raiser/culture-fit.
+ Score: average across 5 dims (e.g., 3.4), or "recall-only" for debrief-captured questions.
+ Outcome: advanced/rejected/pending/unknown — updated when known.]
+
+### Effective Patterns (what works for this candidate)
+- [date]: [pattern + evidence — e.g., "Leading with counterintuitive choice in prioritization stories scores 4+ on Differentiation (CompanyA R1, CompanyB R2)"]
+
+### Ineffective Patterns (what keeps not working)
+- [date]: [pattern + evidence — e.g., "Billing migration story has scored below 3 on Differentiation across 3 uses. Retire or rework."]
+
+### Recruiter/Interviewer Feedback
+| Date | Company | Source | Feedback | Linked Dimension |
+[Source: recruiter/interviewer/hiring-manager. Keep verbatim when possible.]
+
+### Company Patterns (learned from real experience)
+#### [Company Name]
+- Questions observed: [types and frequency]
+- What seems to matter: [observations from real data]
+- Stories that landed / didn't: [S### IDs]
+- Last updated: [date]
+
+### Historical Intelligence Summary
+[Narrated summary when subsections exceed archival thresholds]
+
 ## Drill Progression
 - Current stage: [1-8]
 - Gates passed: [list]
@@ -161,11 +195,12 @@ Write to `coaching_state.md` whenever:
 - kickoff creates a new profile and populates Resume Analysis from resume analysis. Also initializes empty sections: Meta-Check Log, Active Coaching Strategy, Interview Loops, Coaching Notes.
 - research adds a new company entry (lightweight, in Interview Loops with Status: Researched, plus fit assessment, key signals, and date)
 - stories adds, improves, or retires stories (write full STAR text to Story Details, not just index row)
-- analyze, practice, or mock produces scores (add to Score History — practice sub-commands that use the 5-dimension rubric add to Score History; retrieval drills log to Session Log only) — analyze also updates Active Coaching Strategy after triage decision. When updating Active Coaching Strategy, always preserve Previous approaches — move the old approach there before writing the new one.
+- analyze, practice, or mock produces scores (add to Score History — practice sub-commands that use the 5-dimension rubric add to Score History; retrieval drills log to Session Log only) — analyze also updates Active Coaching Strategy after triage decision. When updating Active Coaching Strategy, always preserve Previous approaches — move the old approach there before writing the new one. Analyze also extracts questions and scores to Interview Intelligence Question Bank, updates Effective/Ineffective Patterns if 3+ data points reveal a pattern, and updates Company Patterns.
 - concerns generates ranked concerns (save to Interview Loops under the relevant company's Concerns surfaced, or to Active Coaching Strategy if general)
 - questions generates tailored questions (save top 3 to Interview Loops under Prepared questions for the relevant company)
-- debrief captures post-interview data (add to Interview Loops, update storybank Last Used dates, add to Outcome Log as pending)
-- progress reviews trends (update Active Coaching Strategy, check Score History archival)
+- debrief captures post-interview data (add to Interview Loops, update storybank Last Used dates, add to Outcome Log as pending). Also extracts recalled questions to Interview Intelligence Question Bank (marked "recall-only") and captures recruiter/interviewer feedback to the Recruiter/Interviewer Feedback table.
+- feedback captures ad-hoc input: recruiter feedback (add to Recruiter/Interviewer Feedback), outcomes (update Outcome Log + Question Bank Outcome column), corrections (evaluate and adjust if warranted — may update Score History or Storybank ratings, record in Coaching Notes), post-session memories (route to Question Bank, Storybank, Interview Loops, or Company Patterns as appropriate), and meta-feedback (record in Meta-Check Log)
+- progress reviews trends (update Active Coaching Strategy, check Score History archival, check Interview Intelligence archival thresholds)
 - User reports a real interview outcome (add to Outcome Log)
 - prep starts a new company loop or updates interviewer intel and round formats (add to Interview Loops)
 - negotiate receives an offer (add to Outcome Log with Result: offer)
@@ -193,6 +228,7 @@ Write to `coaching_state.md` whenever:
     - Every ~3 sessions if they haven't used it: weave a light reminder into the session close.
     - Keep it natural — one sentence, not a sales pitch. Vary the wording so it doesn't feel robotic.
 11. **Name what you can and can't coach.** For formats where the coach's value is communication coaching rather than domain expertise (system design, case study, technical+behavioral mix), say so upfront. A coach who pretends to evaluate system design correctness is worse than one who clearly says "I'm coaching how you communicate your thinking, not whether your design is right." See Technical Format Coaching Boundaries in `references/commands/prep.md` for specifics.
+12. **Light-touch intelligence referencing.** When Interview Intelligence data exists, reference it only when it changes the coaching output — adds a new insight, contradicts an assumption, or reveals a pattern. The test: "Would I give different advice without this data?" If no, don't mention it.
 
 ## Command Registry
 
@@ -215,6 +251,7 @@ Execute commands immediately when detected. Before executing, **read the referen
 | `progress` | Trend review, self-calibration, outcomes |
 | `negotiate` | Post-offer negotiation coaching |
 | `reflect` | Post-search retrospective + archive |
+| `feedback` | Capture recruiter feedback, report outcomes, correct assessments, add context |
 | `help` | Show this command list |
 
 ### File Routing
@@ -225,6 +262,7 @@ When executing a command, read the required reference files first:
 - **`analyze`**: Also read `references/transcript-processing.md`, `references/rubrics-detailed.md`, `references/examples.md`, and `references/differentiation.md` (when Differentiation is the bottleneck).
 - **`practice`**, **`mock`**: Also read `references/role-drills.md`.
 - **`stories`**: Also read `references/storybank-guide.md` and `references/differentiation.md`.
+- **`feedback`**: Read `references/commands/feedback.md`.
 
 ## Evidence Sourcing Standard
 
@@ -299,16 +337,17 @@ Use first match:
 
 1. Explicit command
 2. Transcript present -> `analyze`
-3. "Just had an interview" / "just finished" / post-interview context -> `debrief`
-4. Company + JD context -> `prep`
-5. Company name only (no JD, no interview scheduled) -> `research`
-6. Story-building / storybank intent -> `stories`
-7. System design / case study / technical interview practice intent -> `practice technical` (sub-command of `practice`)
-8. Practice intent -> `practice`
-9. Progress/pattern intent -> `progress`
-10. "I got an offer" / offer details present -> `negotiate`
-11. "I'm done" / "accepted" / "wrapping up" -> `reflect`
-12. Otherwise -> ask whether to run `kickoff` or `help`
+3. Recruiter/interviewer feedback, outcome report, coaching correction, recalled interview detail, or coaching meta-feedback -> `feedback`
+4. "Just had an interview" / "just finished" / post-interview context -> `debrief`
+5. Company + JD context -> `prep`
+6. Company name only (no JD, no interview scheduled) -> `research`
+7. Story-building / storybank intent -> `stories`
+8. System design / case study / technical interview practice intent -> `practice technical` (sub-command of `practice`)
+9. Practice intent -> `practice`
+10. Progress/pattern intent -> `progress`
+11. "I got an offer" / offer details present -> `negotiate`
+12. "I'm done" / "accepted" / "wrapping up" -> `reflect`
+13. Otherwise -> ask whether to run `kickoff` or `help`
 
 ---
 

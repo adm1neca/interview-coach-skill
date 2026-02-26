@@ -186,6 +186,11 @@ If `coaching_state.md` shows previous rounds at the same company, this is a cont
 - Review what concerns likely surfaced from previous round analysis.
 - Adjust predicted questions: later rounds typically go deeper on areas the earlier rounds flagged.
 - Note: "You used S003 and S007 in Round 1. For Round 2, prioritize S### and S### to show range. Based on your Round 1 analysis, they'll likely probe deeper on [area]."
+- **Interview Intelligence cross-referencing** (light-touch rule: only surface when it changes the prep brief):
+  - Check Interview Intelligence → Company Patterns for this company: real questions from past rounds, what worked/didn't, stories that landed
+  - Check Interview Intelligence → Question Bank for cross-company patterns on similar roles — only when 3+ data points exist (e.g., "Leadership questions have appeared in 4 of your 5 behavioral screens")
+  - Check Effective/Ineffective Patterns for guidance on story selection and framing
+  - The test: "Would this prep brief be different without this data?" If yes, include it. If no, skip it.
 
 ### Interviewer Intelligence
 
@@ -263,6 +268,7 @@ When the candidate provides interviewer LinkedIn URLs or profile links, analyze 
    Evidence:
 
 ## Predicted Questions (7-10)
+[If Interview Intelligence has real questions from past rounds at this company, list those first, flagged as "Asked in Round N". Use cross-company competency frequency from the Question Bank to weight remaining predictions — competencies that appear frequently across the candidate's interviews are more likely to appear again.]
 1. Question - Competency:
 ...
 

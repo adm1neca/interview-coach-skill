@@ -18,7 +18,9 @@ Captures what happened in a real interview while it's still fresh. This is the b
 5. **Surprise capture.** "Was there anything you didn't expect? A question you weren't prepared for, a format difference, something about the interviewer or environment?" Unexpected moments are often the most informative for coaching.
 6. **Story usage log.** "Which stories did you use? Did any of them land differently than in practice?" Cross-reference with storybank — update `Last Used` dates and add performance notes.
 7. **Immediate tactical notes.** "Is there anything you want to do differently for the next round, based on this one?" Capture their own coaching instinct.
-8. **Transcript availability check.** "Do you have a recording or transcript? If so, we can do a full `analyze` later. If not, I'll work from what you've captured here."
+8. **Recruiter/interviewer feedback capture.** "Did you get any feedback from the recruiter about this round? Even informal comments — 'they really liked your background' or 'the interviewer had some concerns about X' — are valuable signal." If feedback exists, record it for the Recruiter/Interviewer Feedback table in Interview Intelligence.
+9. **Past question similarity check.** Scan the Interview Intelligence Question Bank for questions similar to what the candidate recalled. If matches exist, note them briefly: "You've seen a prioritization question like Q2 before — at [Company] in Round [N]. Your score on that one was [X]." Only surface matches that are useful (same competency tested, score trajectory, or company pattern). Don't force connections.
+10. **Transcript availability check.** "Do you have a recording or transcript? If so, we can do a full `analyze` later. If not, I'll work from what you've captured here."
 
 ### With vs. Without Transcript
 
@@ -74,6 +76,17 @@ Based on the emotional check in step 1, adapt:
 - What to do differently:
 - What worked:
 
+## Feedback Received
+- Date:
+- Company:
+- Source: [recruiter / interviewer / hiring manager / none]
+- Feedback: [verbatim or close to it]
+- Linked dimension: [if mappable]
+
+## Intelligence Notes
+- Questions matched from past interviews: [any Question Bank matches, or "no prior data"]
+- Company pattern observations: [anything learned about this company's interview approach]
+
 ## Transcript Status
 - [ ] Transcript available → run `analyze` when ready
 - [ ] No transcript → directional analysis above is what we have
@@ -87,3 +100,4 @@ Update `coaching_state.md` per the State Update Triggers in SKILL.md:
 - Storybank updates: Last Used dates, performance notes
 - Interview Loop updates: round completed, stories used, signals noted
 - Outcome Log: add entry with Result: pending
+- Interview Intelligence updates: recalled questions to Question Bank (marked "recall-only"), recruiter/interviewer feedback to Recruiter/Interviewer Feedback table, Company Patterns if new observations emerged

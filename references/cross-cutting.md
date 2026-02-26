@@ -152,9 +152,10 @@ Commands produce better output when they have data from other commands. This tab
 |---|---|---|---|
 | `kickoff` | — | Everything — this is the entry point | — |
 | `research` | Profile from `kickoff` | Profile (gives generic fit assessment) | Company name |
-| `prep` | Storybank, coaching state profile, interviewer links | Storybank (can't do story mapping, flags the gap), profile (infers from JD) | Company + JD |
+| `prep` | Storybank, coaching state profile, interviewer links, Interview Intelligence (Company Patterns, Question Bank) | Storybank (can't do story mapping, flags the gap), profile (infers from JD), Interview Intelligence (loses real-question weighting and company pattern data) | Company + Role/seniority + JD |
 | `analyze` | Coaching state (seniority band, storybank for story matching) | Seniority band (asks for it), storybank (skips story mapping) | Transcript |
-| `debrief` | Storybank (for Last Used updates), Interview Loops (for context) | Both (captures data without cross-referencing) | — |
+| `feedback` | Interview Intelligence (for cross-referencing feedback with existing data), Interview Loops, Score History | All (captures data without cross-referencing) | — |
+| `debrief` | Storybank (for Last Used updates), Interview Loops (for context), Interview Intelligence Question Bank (for past question similarity checks) | All (captures data without cross-referencing) | — |
 | `practice` | Score history (to set drill stage), storybank (for tailored questions), prep data (for company-specific drills), Drill Progression (for current stage) | All (uses generic questions, starts at Stage 1) | — |
 | `mock` | Prep data, storybank, score history, interviewer intel, concerns data (for targeted questions) | All (uses generic questions and personas) | Format |
 | `stories` | Resume analysis from kickoff (for story seeds) | Resume (uses reflective prompts instead) | — |
@@ -162,7 +163,7 @@ Commands produce better output when they have data from other commands. This tab
 | `questions` | Prep data, interviewer intel, interview stage | All (generates generic questions) | — |
 | `hype` | Score history, storybank, prep brief, concerns, resume analysis | All (falls back to resume-based hype — explicitly flagged) | — |
 | `thankyou` | Debrief data, Interview Loops, interviewer intel | All (asks candidate for callbacks) | — |
-| `progress` | 3+ scored sessions, outcome data | Works with 1-2 sessions (reduced — see minimum data thresholds) | At least 1 scored session |
+| `progress` | 3+ scored sessions, outcome data, Interview Intelligence (Question Bank, Feedback, Patterns) | Works with 1-2 sessions (reduced — see minimum data thresholds), Interview Intelligence (loses question-type performance and accumulated pattern analysis) | At least 1 scored session |
 | `negotiate` | Interview Loops, outcome log | Both (collects offer details fresh) | Offer details |
 | `reflect` | Full coaching state with score history and outcomes | Score history (narrates from limited data) | — |
 

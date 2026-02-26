@@ -15,6 +15,7 @@ When the user types `help`, generate a context-aware command guide — not just 
    - If 3+ scored sessions exist: highlight `progress`
    - If an offer was received: highlight `negotiate`
    - If drill progression shows the candidate hasn't completed Stage 1: highlight `practice ladder`
+   - If the candidate mentions recruiter feedback or an outcome in conversation but hasn't used `feedback`: highlight `feedback`
 4. **Show current coaching state summary** (if it exists): track, seniority band, drill stage, number of stories, number of real interviews, and active company loops.
 5. **End with a prompt**: "What would you like to work on?"
 
@@ -32,7 +33,7 @@ When the user types `help`, generate a context-aware command guide — not just 
 | Command | What It Does |
 |---|---|
 | `research [company]` | Lightweight company research + fit assessment before committing to full prep |
-| `prep [company]` | Full prep brief — format guidance, culture read, interviewer intelligence (from LinkedIn URLs), predicted questions, story mapping, and a day-of cheat sheet |
+| `prep [company]` | Full prep brief — format guidance, culture read, interviewer intelligence (from LinkedIn URLs), predicted questions (weighted by real questions from past interviews when available), story mapping, and a day-of cheat sheet |
 | `concerns` | Anticipate likely interviewer concerns about your profile + counter-evidence strategies |
 | `questions` | Generate 5 tailored, non-generic questions to ask your interviewer |
 | `hype` | Pre-interview boost — 60-second hype reel, 3x3 sheet (concerns + counters + questions), warmup routine, and mid-interview recovery playbook |
@@ -46,8 +47,8 @@ When the user types `help`, generate a context-aware command guide — not just 
 ### Analysis and Scoring
 | Command | What It Does |
 |---|---|
-| `analyze` | Paste a transcript for per-answer 5-dimension scoring, triage-based coaching (branches based on YOUR bottleneck), answer rewrites showing what a 4-5 version looks like, and a specific recommended next step |
-| `debrief` | Post-interview rapid capture — works same-day with or without a transcript. Captures questions, interviewer signals, stories used, and updates your coaching state |
+| `analyze` | Paste a transcript for per-answer 5-dimension scoring, triage-based coaching (branches based on YOUR bottleneck), answer rewrites showing what a 4-5 version looks like, intelligence updates (tracks questions and patterns across interviews), and a specific recommended next step |
+| `debrief` | Post-interview rapid capture — works same-day with or without a transcript. Captures questions, interviewer signals, stories used, recruiter feedback, and checks for question patterns from past interviews |
 
 ### Storybank
 | Command | What It Does |
@@ -57,11 +58,12 @@ When the user types `help`, generate a context-aware command guide — not just 
 ### Progress and Tracking
 | Command | What It Does |
 |---|---|
-| `progress` | Score trends, self-assessment calibration (are you an over-rater or under-rater?), storybank health, outcome tracking (correlates practice scores with real interview results), and coaching meta-check |
+| `progress` | Score trends, self-assessment calibration (are you an over-rater or under-rater?), storybank health, outcome tracking (correlates practice scores with real interview results), question-type performance analysis, accumulated patterns from real interviews, and coaching meta-check |
 
 ### Post-Interview
 | Command | What It Does |
 |---|---|
+| `feedback` | Capture recruiter feedback, report outcomes (advanced/rejected/offer), correct assessments, or add context the system should remember. The system learns from your real interview experiences over time. |
 | `thankyou` | Thank-you note and follow-up drafts tailored to the interview |
 | `negotiate` | Post-offer negotiation coaching — market analysis, strategy, exact scripts, and fallback language |
 | `reflect` | Post-search retrospective — journey arc, breakthroughs, transferable skills, archived coaching state |
@@ -86,6 +88,7 @@ Based on where you are:
 ## Tips
 - Share a real resume during `kickoff` — it powers everything downstream (concerns, positioning, story seeds)
 - Use `debrief` the same day as a real interview — capture signals while they're fresh
+- When you hear back from a recruiter — good or bad — run `feedback` to capture it. The system learns from your real interview experiences over time.
 - Run `progress` weekly — it tracks your self-assessment accuracy, not just scores
 - After real interviews, log outcomes — the system correlates practice scores with real results
 - Set your feedback directness level (1-5) during `kickoff` — the diagnosis stays the same, only the delivery changes
