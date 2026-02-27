@@ -76,7 +76,7 @@ Use the Role-Fit Assessment Module from `references/cross-cutting.md`. Without a
 
 **Cannot assess without JD**: Requirement Coverage, Competency Overlap. Flag this: "For a full fit assessment, I'd need the job description."
 
-**Verdict**: Strong Fit / Stretch Fit (investable or long-shot) / Weak Fit — with the specific dimension scores driving the verdict.
+**Verdict**: Strong Fit / Investable Stretch / Long-Shot Stretch / Weak Fit — with the specific dimension scores driving the verdict.
 
 **If Weak Fit or Long-Shot Stretch**: Follow the Alternative Suggestions Protocol — name the gaps, suggest what a better-fit version looks like, and respect the candidate's decision if they want to proceed.
 

@@ -40,6 +40,7 @@
    Source:
    Counter (direct question):
    Counter (subtle probe):
+   Counter (follow-up challenge):
    Best story:
 
 ### Minor

@@ -179,6 +179,7 @@ SEGMENTATION:
 
 BEHAVIORAL SEGMENTS: Parse via Path A (Q# units)
 TECHNICAL SEGMENTS: Parse via Path C (P# phases)
+NUMBERING: Number each type sequentially across the full transcript (e.g., Q1, Q2, P1, P2, P3, Q3). Do not reset numbering between segments.
 
 MODE-SWITCHING METADATA:
 - Transition points: [where did mode switches happen?]
@@ -195,7 +196,7 @@ Parse into **stages**: problem definition, framework, analysis, recommendation, 
 
 ```
 FOR EACH STAGE, CAPTURE:
-- unit_id: S1, S2, etc.
+- unit_id: CS1, CS2, etc.
 - stage_type: problem-definition / framework / analysis / recommendation / q-and-a
 - information_requests: [what data/clarification did the candidate ask for?]
 - hypothesis_statements: [did the candidate state hypotheses?]
@@ -237,7 +238,7 @@ Before scoring, scan the transcript against known failure patterns. This provide
 | **Defensive deflection** | When pressed on a weakness, redirects to strengths without acknowledging the gap | Medium | Gap-handling drill |
 | **Rehearsed robotics** | Answer sounds memorized — identical phrasing to previous practice, no adaptation to question nuance | Medium | Variation practice: same story, different framings |
 
-After scanning, include detected anti-patterns in the analysis output. Each detected pattern should reference which unit (Q#, E#, P#, S#) triggered it and link to the specific fix.
+After scanning, include detected anti-patterns in the analysis output. Each detected pattern should reference which unit (Q#, E#, P#, CS#) triggered it and link to the specific fix.
 
 ### Format-Specific Anti-Patterns
 
@@ -272,7 +273,7 @@ In addition to the behavioral anti-patterns above, scan for these format-specifi
 | **No integration** | Never connects technical decisions to behavioral context or vice versa | Medium | Integration drill: "The technical choice connects to my leadership approach because..." |
 | **Energy cliff** | Performance visibly drops in the second mode (usually technical → behavioral) | Medium | Stamina practice. Run 45+ minute mixed sessions. |
 
-**Case Study Anti-Patterns:**
+**Case Study (Candidate-Driven) Anti-Patterns:**
 
 | Anti-Pattern | Detection Heuristic | Severity | Fix |
 |---|---|---|---|
@@ -290,7 +291,7 @@ Run the parsed transcript through evaluative lenses. **Important**: Which lenses
 
 ### Scoring Weight Adjustments by Format
 
-Reference `references/commands/prep.md`'s Interview Format Taxonomy as the single source of truth for format-specific weight adjustments:
+Reference `references/commands/prep.md`'s Interview Format Taxonomy as the single source of truth for format-specific weight adjustments. The table below is a convenience copy — if it conflicts with prep.md, prep.md wins:
 
 | Format | Primary Dimensions (weighted highest) |
 |---|---|

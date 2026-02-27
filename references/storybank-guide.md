@@ -19,6 +19,7 @@ Create a table with these columns:
 | **Risk/Stakes** | What could have gone wrong? Why did it matter? |
 | **Earned Secret** | The counterintuitive insight only you learned from this experience (see `references/differentiation.md` for extraction protocol) |
 | **Strength** | How compelling/differentiated (1-5) |
+| **Use Count** | Total times used in real interviews (incremented via debrief). Tracks overuse risk. |
 | **Last Used** | Date of most recent use in interview |
 | **Notes** | Performance notes, feedback received |
 

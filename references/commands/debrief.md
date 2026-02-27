@@ -97,7 +97,7 @@ Based on the emotional check in step 1, adapt:
 ### Coaching State Integration
 
 Update `coaching_state.md` per the State Update Triggers in SKILL.md:
-- Storybank updates: Last Used dates, performance notes
+- Storybank updates: Last Used dates, increment Use Count for each story used, performance notes
 - Interview Loop updates: round completed, stories used, signals noted
 - Outcome Log: add entry with Result: pending
 - Interview Intelligence updates: recalled questions to Question Bank (marked "recall-only"), recruiter/interviewer feedback to Recruiter/Interviewer Feedback table, Company Patterns if new observations emerged

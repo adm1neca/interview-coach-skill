@@ -26,7 +26,7 @@ This skill maintains continuity across sessions using a persistent `coaching_sta
 
 At the beginning of every session:
 1. Read `coaching_state.md` if it exists.
-2. **If it exists**: Run the Timeline Staleness Check (see below). Then greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run kickoff. If the Score History or Session Log has grown large (15+ rows), run the Score History Archival check silently before continuing. Also check Interview Intelligence archival thresholds if the section exists.
+2. **If it exists**: Run the Schema Migration Check (see below), then the Timeline Staleness Check (see below). Then greet the candidate by context: "Welcome back. Last session we worked on [X]. Your current drill stage is [Y]. You have [Z] real interviews logged. Where do you want to pick up?" Do NOT re-run kickoff. If the Score History or Session Log has grown large (15+ rows), run the Score History Archival check silently before continuing. Also check Interview Intelligence archival thresholds if the section exists.
 3. **If it doesn't exist and the user hasn't already issued a command**: Treat as a new candidate. Suggest kickoff.
 4. **If it doesn't exist but the user has already issued a command** (e.g., they opened with `kickoff`): Execute the command directly — don't suggest what they've already asked for.
 
@@ -53,6 +53,16 @@ When Score History exceeds 15 rows, summarize the oldest entries into a Historic
 - Effective/Ineffective Patterns: 10 entries → consolidate to 3-5 summary patterns in Historical Intelligence Summary
 - Recruiter/Interviewer Feedback: 15 rows → summarize older feedback into Company Patterns, keep 10 recent
 - Company Patterns for closed loops (Status: Archived or Closed) → compress to 2-3 lines
+
+### Schema Migration Check
+
+After reading `coaching_state.md`, check whether it contains all sections and columns defined in the current schema. Coaching state files created with earlier versions of the skill may be missing newer fields. If any are missing, migrate silently:
+
+- **Missing `Secondary Skill` column in Storybank**: Add the column to the table header. Leave existing rows blank for Secondary Skill. Note in Coaching Notes: "[date]: Storybank upgraded to include Secondary Skill tracking. Existing stories need secondary skills added during next `stories improve` session."
+- **Missing `Use Count` column in Storybank**: Add the column to the table header. Initialize all existing rows to 0. The count will begin tracking from this point forward.
+- **Missing `Calibration State` section**: Add the full section using the schema defined below (after Active Coaching Strategy). Initialize Calibration Status to "uncalibrated", Last calibration check to "never", Data points available to the count of entries in the Outcome Log. All tables start empty.
+
+Run this migration silently — do not announce schema changes to the candidate unless they affect immediate coaching recommendations. After migration, the coaching state is fully compatible with the current skill version.
 
 ### Timeline Staleness Check
 
@@ -110,7 +120,7 @@ Last updated: [date]
 ## Outcome Log
 | Date | Company | Role | Round | Result | Notes |
 |------|---------|------|-------|--------|-------|
-[rows — Result: advanced/rejected/pending/offer]
+[rows — Result: advanced/rejected/pending/offer/withdrawn]
 
 ## Interview Intelligence
 
@@ -281,7 +291,7 @@ When executing a command, read the required reference files first:
 
 - **All commands**: Read `references/commands/[command].md` for that command's workflow, and `references/cross-cutting.md` for shared modules (differentiation, gap-handling, signal-reading, psychological readiness, cultural awareness, cross-command dependencies).
 - **`analyze`**: Also read `references/transcript-processing.md`, `references/transcript-formats.md`, `references/rubrics-detailed.md`, `references/examples.md`, `references/calibration-engine.md`, and `references/differentiation.md` (when Differentiation is the bottleneck).
-- **`practice`**, **`mock`**: Also read `references/role-drills.md`.
+- **`practice`**, **`mock`**: Also read `references/role-drills.md`. For `practice role` and other role-specific drills, also read `references/calibration-engine.md` Section 5 (role-drill score mapping).
 - **`prep`**: Also read `references/story-mapping-engine.md` when storybank exists.
 - **`stories`**: Also read `references/storybank-guide.md` and `references/differentiation.md`.
 - **`progress`**: Also read `references/calibration-engine.md`.

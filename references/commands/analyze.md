@@ -69,10 +69,10 @@ After scoring, identify bottleneck dimensions and branch. Most candidates have m
 
 ### Per-Unit Format (for each analyzed unit)
 
-Use the appropriate unit ID based on interview format: Q# for behavioral, E# for panel exchanges, P# for system design phases, S# for case study stages. Mixed-format interviews use the relevant ID per segment.
+Use the appropriate unit ID based on interview format: Q# for behavioral, E# for panel exchanges, P# for system design phases, CS# for case study stages. Mixed-format interviews use the relevant ID per segment.
 
 ```markdown
-### [Q#/E#/P#/S#]
+### [Q#/E#/P#/CS#]
 - Scores: Substance __ / Structure __ / Relevance __ / Credibility __ / Differentiation __
 - Format-specific scores (if applicable): [e.g., Process Visibility __ / Scoping Quality __]
 - What worked:

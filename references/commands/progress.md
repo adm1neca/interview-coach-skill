@@ -236,16 +236,13 @@ This is hard but important. If after sustained effort, scores remain at 2-3 acro
 - Company Patterns flagged as stale (>6 months): [list companies]
 - Patterns needing re-test (>3 months old): [list]
 
-## Accumulated Patterns (if 3+ data points per pattern)
-- Confirmed effective patterns: [from Interview Intelligence]
-- Confirmed ineffective patterns: [from Interview Intelligence]
+## Patterns
+- Repeating strengths: [observable patterns across sessions]
+- Repeating failure modes: [observable patterns across sessions]
+- Confirmed effective patterns (3+ data points): [from Interview Intelligence — what works for this candidate]
+- Confirmed ineffective patterns (3+ data points): [from Interview Intelligence — what keeps not working]
 - Confirmed success patterns: [from calibration — what correlates with advancement]
 - Feedback-outcome correlation: [if sufficient data]
-
-## Pattern Signals
-- Repeating strengths:
-- Repeating failure modes:
-- Root cause patterns detected:
 
 ## Revisit Queue
 - Past weaknesses to retest:

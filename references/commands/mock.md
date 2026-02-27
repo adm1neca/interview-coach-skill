@@ -64,6 +64,10 @@ Switch between personas naturally within the session. Create moments where perso
 - **Time management**: Did they allocate time across the problem, or spend 80% on one component?
 - **Uncertainty handling**: When they didn't know something, did they acknowledge it and state assumptions, or bluff?
 
+### Case Study (Candidate-Driven) Note
+
+For consulting-style case studies where the candidate drives the analysis (framework selection, hypothesis-driven analysis, quantitative reasoning), the mock currently uses the System Design simulation protocol above. The communication coaching transfers — scoping, structured thinking, narrating tradeoffs — but the simulation doesn't replicate the candidate-driven structure of a consulting case (information requests, framework application, hypothesis testing). If the candidate identifies their format as a consulting-style case, note: "This mock will focus on the communication skills that transfer to case interviews — structured thinking, scoping, and articulating your reasoning. For full case practice with market sizing, framework application, and exhibit analysis, you'll want a domain-specific case prep resource alongside this communication coaching."
+
 ### Technical + Behavioral Mix Simulation UX
 
 **Before starting, run the Format Discovery Protocol** with these additional questions:
@@ -116,13 +120,16 @@ Record their responses and compare to your independent assessment in the debrief
 - Pacing: [rushed / well-timed / dragged]
 - Answer length distribution: [consistent / front-loaded / back-loaded / erratic]
 
-## Per-Question Scorecard
-### Q1
+## Per-Unit Scorecard
+Use the appropriate unit ID based on mock format: Q# for behavioral, E# for panel exchanges, P# for system design phases, CS# for case study stages. Mixed-format mocks use the relevant ID per segment.
+
+### Q1/E1/P1/CS1
 - Scores: Substance __ / Structure __ / Relevance __ / Credibility __ / Differentiation __
+- Format-specific scores (if applicable): [e.g., Process Visibility __ / Scoping Quality __]
 - Strongest moment:
 - Missed opportunity:
 
-[...repeat for each question]
+[...repeat for each unit]
 
 ## Holistic Patterns (things only visible across the full interview)
 - Repeated crutch phrases:
