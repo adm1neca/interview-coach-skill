@@ -63,6 +63,8 @@ After reading `coaching_state.md`, check whether it contains all sections and co
 - **Missing `Calibration State` section**: Add the full section using the schema defined below (after Active Coaching Strategy). Initialize Calibration Status to "uncalibrated", Last calibration check to "never", Data points available to the count of entries in the Outcome Log. All tables start empty.
 - **Missing `LinkedIn Analysis` section**: Add the section header with empty fields. Note in Coaching Notes: "[date]: LinkedIn Analysis section added. Run `linkedin` to populate."
 - **Missing `Resume Optimization` section**: Add the section header with empty fields. Note in Coaching Notes: "[date]: Resume Optimization section added. Run `resume` to populate."
+- **Missing `Positioning Statement` section**: Add the section header with empty fields. Note in Coaching Notes: "[date]: Positioning Statement section added. Run `pitch` to populate."
+- **Missing `Outreach Strategy` section**: Add the section header with empty fields. Note in Coaching Notes: "[date]: Outreach Strategy section added. Run `outreach` to populate."
 
 Run this migration silently — do not announce schema changes to the candidate unless they affect immediate coaching recommendations. After migration, the coaching state is fully compatible with the current skill version.
 
@@ -226,6 +228,28 @@ Last updated: [date]
 - JD-targeted: [yes — which JD / no]
 - Cross-surface gaps: [resume ↔ LinkedIn inconsistencies, if assessed]
 
+## Positioning Statement
+- Date: [date]
+- Depth: [Quick Draft / Standard / Deep Positioning]
+- Core statement: [the full hook + context + bridge — 30-45 second version]
+- Hook (10s): [the curiosity-gap opener alone]
+- Key differentiator: [one sentence]
+- Earned secret anchor: [the earned secret or spiky POV powering the positioning]
+- Target audience: [primary audience this was optimized for]
+- Variant status: [which variants were produced]
+- Consistency status: [aligned / gaps identified — brief summary]
+
+## Outreach Strategy
+- Date: [date]
+- Depth: [Quick / Standard / Deep]
+- Positioning source: [Positioning Statement / Resume Analysis fallback]
+- Message types coached: [list]
+- Targets contacted: [people/companies]
+- Channel strategy: [primary channels]
+- Follow-up status: [pending follow-ups with timing]
+- LinkedIn profile flagged: [yes/no]
+- Key hooks identified: [1-2 reusable positioning hooks]
+
 ## Meta-Check Log
 | Session | Candidate Feedback | Adjustment Made |
 |---------|-------------------|-----------------|
@@ -260,6 +284,8 @@ Write to `coaching_state.md` whenever:
 - User reports a real interview outcome (add to Outcome Log)
 - linkedin produces profile audit (save LinkedIn Analysis section to coaching_state.md — date, depth, overall score, dimension scores, top fixes pending, positioning gaps)
 - resume produces resume audit (save Resume Optimization section to coaching_state.md — date, depth, overall score, dimension scores, top fixes pending, JD-targeted status, cross-surface gaps)
+- pitch produces a positioning statement (save Positioning Statement section to coaching_state.md — date, depth, core statement, hook, key differentiator, earned secret anchor, target audience, variant status, consistency status)
+- outreach produces outreach coaching (save Outreach Strategy section to coaching_state.md — date, depth, positioning source, message types coached, targets contacted, channel strategy, follow-up status, LinkedIn profile flagged, key hooks identified)
 - prep starts a new company loop or updates interviewer intel, round formats, fit verdict, fit confidence, and structural gaps (add to Interview Loops)
 - negotiate receives an offer (add to Outcome Log with Result: offer)
 - reflect archives the coaching state (add Status: Archived header)
@@ -306,6 +332,8 @@ Execute commands immediately when detected. Before executing, **read the referen
 | `questions` | Generate tailored interviewer questions |
 | `linkedin` | LinkedIn profile optimization |
 | `resume` | Resume optimization |
+| `pitch` | Core positioning statement + context variants |
+| `outreach` | Networking outreach coaching |
 | `hype` | Pre-interview confidence and 3x3 plan |
 | `thankyou` | Thank-you note / follow-up drafts |
 | `progress` | Trend review, self-calibration, outcomes |
@@ -324,6 +352,8 @@ When executing a command, read the required reference files first:
 - **`prep`**: Also read `references/story-mapping-engine.md` when storybank exists.
 - **`linkedin`**: Also read `references/differentiation.md` (for earned secret integration into profile), `references/storybank-guide.md` (for storybank data to feed into About/Experience rewrites).
 - **`resume`**: Also read `references/differentiation.md` (for earned secret integration into summary and bullets), `references/storybank-guide.md` (for storybank data to feed into bullet rewrites and quantification).
+- **`pitch`**: Also read `references/differentiation.md` (for earned secret integration into positioning), `references/storybank-guide.md` (for narrative identity themes and story data to anchor the statement).
+- **`outreach`**: Also read `references/differentiation.md` (for earned secret integration into message hooks), `references/storybank-guide.md` (for story selection to build credibility in messages).
 - **`stories`**: Also read `references/storybank-guide.md` and `references/differentiation.md`.
 - **`progress`**: Also read `references/calibration-engine.md`.
 - **All commands at Directness Level 5**: Also read `references/challenge-protocol.md`.
@@ -409,17 +439,19 @@ Use first match:
 6. Company name only (no JD, no interview scheduled) -> `research`
 7. LinkedIn profile/optimization intent -> `linkedin`
 8. Resume optimization intent -> `resume`
-9. Story-building / storybank intent -> `stories`
-10. System design / case study / technical interview practice intent -> `practice technical` (sub-command of `practice`)
-11. Practice intent -> `practice`
-12. Progress/pattern intent -> `progress`
-13. "I got an offer" / offer details present -> `negotiate`
-14. "I'm done" / "accepted" / "wrapping up" -> `reflect`
-15. Otherwise -> ask whether to run `kickoff` or `help`
+9. Pitch / positioning / "tell me about yourself" prep / "how do I introduce myself" intent -> `pitch`
+10. Networking outreach / cold email / "how do I reach out" / recruiter reply intent -> `outreach`
+11. Story-building / storybank intent -> `stories`
+12. System design / case study / technical interview practice intent -> `practice technical` (sub-command of `practice`)
+13. Practice intent -> `practice`
+14. Progress/pattern intent -> `progress`
+15. "I got an offer" / offer details present -> `negotiate`
+16. "I'm done" / "accepted" / "wrapping up" -> `reflect`
+17. Otherwise -> ask whether to run `kickoff` or `help`
 
 ### Multi-Step Intent Detection
 
-When a candidate's request implies a sequence of commands, state the plan and execute sequentially, transitioning naturally between steps. Don't force — offer the next step, don't mandate it. **Precedence**: Multi-step intent patterns take priority over Mode Detection items 3-13. If the candidate's input matches both a multi-step sequence and a single-command Mode Detection match, follow the multi-step sequence. Explicit commands (Mode Detection item 1) and transcript presence (item 2) still take priority over multi-step patterns.
+When a candidate's request implies a sequence of commands, state the plan and execute sequentially, transitioning naturally between steps. Don't force — offer the next step, don't mandate it. **Precedence**: Multi-step intent patterns take priority over Mode Detection items 3-15. If the candidate's input matches both a multi-step sequence and a single-command Mode Detection match, follow the multi-step sequence. Explicit commands (Mode Detection item 1) and transcript presence (item 2) still take priority over multi-step patterns.
 
 | Intent | Sequence |
 |--------|----------|
@@ -427,8 +459,9 @@ When a candidate's request implies a sequence of commands, state the plan and ex
 | "I just finished my interview at [company]" | `debrief` → (later) `analyze` if transcript available |
 | "Help me get ready for tomorrow" | `hype` (+ `prep` if none exists for the company) |
 | "I want to work on my stories" | `stories add`/`improve` cycle |
-| "I'm starting my job search" | `kickoff` → `stories` → `resume` (Quick Audit) → `linkedin` (Quick Audit) |
-| "I want to optimize my application materials" | `resume` → `linkedin` (if not already done) |
+| "I'm starting my job search" | `kickoff` → `stories` → `pitch` → `resume` (Quick Audit) → `linkedin` (Quick Audit) |
+| "I want to optimize my application materials" | `pitch` (if no Positioning Statement) → `resume` → `linkedin` (if not already done) |
+| "I want to start networking" / "How do I reach out to people?" | `pitch` (if no Positioning Statement) → `linkedin` (Quick Audit, if not already done) → `outreach` |
 | "I got rejected from [company]" | `feedback` Type B → `progress` targeting insights (if 3+ outcomes) |
 
 **Behavior**: When you detect a multi-step intent, briefly state the plan ("I'll walk you through research, then prep, then concerns for [company]"), execute the first step, and at each transition point offer the next step naturally: "That covers the research. Ready to move into full prep?" If the candidate wants to skip or redirect, respect that. When a multi-step sequence is active and Rule 7's state-aware recommendation for the current command diverges from the planned next step, follow the multi-step plan but note the state-aware alternative: "Next in our sequence is `prep`. (Side note: your storybank is empty — we should address that after we finish this prep cycle.)"

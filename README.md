@@ -38,6 +38,10 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 **Resume optimization** — Holistic resume audit across every dimension that actually affects outcomes: ATS parsing and ranking, recruiter scan behavior, bullet quality, seniority calibration, keyword coverage, structure, concern management, and cross-surface consistency. Three depth levels from quick audit to deep optimization with full bullet rewrite pipelines. When a storybank exists, the system mines it for quantified outcomes and earned secrets that should appear in resume bullets. When a JD is available, it produces a targeted version optimized for that specific application. Not a grammar check — a strategic overhaul of the resume as a job-search artifact.
 
+**Core positioning** — Builds the atomic unit of self-presentation: a positioning statement that distills who you are into a compelling, memorable core. Uses curiosity gap principles, earned secret anchoring, and the Present-Past-Future formula to produce variants at every duration (10-second elevator, 30-second networking, 60-second recruiter call, 90-second interview TMAY) plus a LinkedIn summary hook. The positioning statement is saved to coaching state and consumed by resume, linkedin, and outreach for cross-surface consistency. Three depth levels from quick draft to deep positioning with a full differentiation audit.
+
+**Networking outreach coaching** — Coaches the full outreach lifecycle: cold LinkedIn messages, warm introduction requests, informational interview asks, recruiter replies, follow-up sequences, and referral requests. Three depth levels from quick templates to full networking campaigns with multi-channel strategy. Messages are built on the candidate's Positioning Statement so every outreach is differentiated, not generic. The system knows platform mechanics (LinkedIn's 300-char connection request limit, optimal cold email length of 75-125 words, InMail response rates) and coaches accordingly. Includes a message quality rubric, follow-up cadence guidance, and the research showing that referrals account for 30-50% of hires from only 7% of applicants.
+
 **Differentiation** — Earned secrets and spiky POVs are a first-class dimension, not an afterthought. The system pushes you past "competent" toward "memorable."
 
 **Self-awareness** — Tracks the gap between your self-assessment and actual coach scores. Knows if you're an over-rater or under-rater, and adjusts coaching accordingly.
@@ -89,6 +93,8 @@ The coach will ask for your resume, target role, and timeline — then build you
 | `questions` | Generate interviewer questions | 5 tailored, non-generic questions |
 | `linkedin` | LinkedIn profile optimization (3 depth levels) | Section-by-section audit, rewritten sections, content strategy |
 | `resume` | Resume optimization (3 depth levels, JD-targeted when available) | ATS audit, section-by-section assessment, bullet rewrites, seniority calibration, keyword analysis, storybank-to-bullet pipeline |
+| `pitch` | Core positioning statement + context variants | Core statement, constraint ladder, context-specific pitches, positioning consistency check |
+| `outreach` | Networking outreach coaching (3 depth levels, 9 message types) | Message frameworks, draft critique + rewrite, follow-up sequences, multi-channel campaign strategy |
 | `hype` | Pre-interview confidence + psychological warmup. At Level 5: includes a pre-mortem with failure prevention | 60-second reel + 3x3 sheet + focus cue + recovery playbook |
 | `thankyou` | Post-interview follow-up drafts | Thank-you note + variants |
 | `progress` | Trends, self-calibration, outcome tracking, scoring calibration. At Level 5: includes a Hard Truth section | Self-assessment delta + outcome correlation + scoring drift detection + root cause tracking + coaching meta-check |
@@ -298,6 +304,8 @@ interview-coach-skill/
     │   ├── questions.md
     │   ├── linkedin.md
     │   ├── resume.md
+    │   ├── pitch.md
+    │   ├── outreach.md
     │   ├── hype.md
     │   ├── thankyou.md
     │   ├── progress.md
