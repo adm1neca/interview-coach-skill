@@ -15,6 +15,8 @@ When the user types `help`, generate a context-aware command guide — not just 
    - If 3+ scored sessions exist: highlight `progress`
    - If an offer was received: highlight `negotiate`
    - If drill progression shows the candidate hasn't completed Stage 1: highlight `practice ladder`
+   - If LinkedIn Analysis doesn't exist and storybank has 3+ stories: highlight `linkedin`
+   - If LinkedIn Analysis exists and overall is "Weak" or "Needs Work": highlight `linkedin` (mention pending fixes)
    - If the candidate mentions recruiter feedback or an outcome in conversation but hasn't used `feedback`: highlight `feedback`
 4. **Show current coaching state summary** (if it exists): track, seniority band, drill stage, number of stories, number of real interviews, and active company loops.
 5. **End with a prompt**: "What would you like to work on?"
@@ -36,6 +38,7 @@ When the user types `help`, generate a context-aware command guide — not just 
 | `prep [company]` | Full prep brief — role-fit assessment (5 dimensions — identifies frameable vs. structural gaps), format guidance, culture read, interviewer intelligence (from LinkedIn URLs), predicted questions (weighted by real questions from past interviews when available), story mapping, and a day-of cheat sheet |
 | `concerns` | Anticipate likely interviewer concerns about your profile + counter-evidence strategies |
 | `questions` | Generate 5 tailored, non-generic questions to ask your interviewer |
+| `linkedin` | LinkedIn profile optimization — section-by-section audit, recruiter search optimization, content strategy. Three depth levels: Quick Audit, Standard, Deep Optimization. At Level 5 Deep: Challenge Protocol applied to your profile. |
 | `hype` | Pre-interview boost — 60-second hype reel, 3x3 sheet (concerns + counters + questions), warmup routine, and mid-interview recovery playbook |
 
 ### Practice and Simulation
@@ -94,6 +97,7 @@ When the user types `help`, generate a context-aware command guide — not just 
 - For high-priority targets, ask for a deep dive research — `research [company]` and mention you want comprehensive intelligence
 - Paste raw transcripts from any tool (Otter, Zoom, Grain, etc.) — the system auto-detects the format and cleans it up
 - The coach will recommend a specific next step after every command — just follow the flow if you're not sure what to do next
+- Your LinkedIn profile is a search engine, not a resume. Run `linkedin` to optimize for how recruiters actually find candidates.
 - Everything saves automatically to `coaching_state.md` — pick up where you left off, even weeks later
 
 What would you like to work on?

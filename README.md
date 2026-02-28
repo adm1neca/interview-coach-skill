@@ -34,6 +34,8 @@ Say `kickoff`, share your resume, and you're being coached in under 2 minutes.
 
 **Guided flow** — The coach recommends a specific next step after every command based on your coaching state — not a generic menu. When you say something like "prepare me for my interview at Google," it detects the multi-step intent and walks you through the full sequence (research, prep, concerns, hype) with natural transitions. Session start greetings include a prescriptive recommendation for the highest-leverage move right now.
 
+**LinkedIn profile optimization** — Section-by-section audit of your LinkedIn profile against how the platform actually works: recruiter boolean search mechanics, algorithm distribution, and section-specific impact. Three depth levels from quick audit to deep optimization with content strategy. Not a resume-to-LinkedIn copy — a platform-native optimization that treats LinkedIn as its own game.
+
 **Differentiation** — Earned secrets and spiky POVs are a first-class dimension, not an afterthought. The system pushes you past "competent" toward "memorable."
 
 **Self-awareness** — Tracks the gap between your self-assessment and actual coach scores. Knows if you're an over-rater or under-rater, and adjusts coaching accordingly.
@@ -83,6 +85,7 @@ The coach will ask for your resume, target role, and timeline — then build you
 | `stories` | Build/manage storybank + rapid-retrieval drill. At Level 5: stories get red-teamed with 5 challenge lenses | Story table + earned secrets + gap analysis + retrieval drill |
 | `concerns` | Anticipate interviewer concerns | Concern-counter-evidence map |
 | `questions` | Generate interviewer questions | 5 tailored, non-generic questions |
+| `linkedin` | LinkedIn profile optimization (3 depth levels) | Section-by-section audit, rewritten sections, content strategy |
 | `hype` | Pre-interview confidence + psychological warmup. At Level 5: includes a pre-mortem with failure prevention | 60-second reel + 3x3 sheet + focus cue + recovery playbook |
 | `thankyou` | Post-interview follow-up drafts | Thank-you note + variants |
 | `progress` | Trends, self-calibration, outcome tracking, scoring calibration. At Level 5: includes a Hard Truth section | Self-assessment delta + outcome correlation + scoring drift detection + root cause tracking + coaching meta-check |
@@ -290,6 +293,7 @@ interview-coach-skill/
     │   ├── stories.md
     │   ├── concerns.md
     │   ├── questions.md
+    │   ├── linkedin.md
     │   ├── hype.md
     │   ├── thankyou.md
     │   ├── progress.md
