@@ -19,6 +19,10 @@ When the user types `help`, generate a context-aware command guide — not just 
    - If LinkedIn Analysis exists and overall is "Weak" or "Needs Work": highlight `linkedin` (mention pending fixes)
    - If Resume Optimization doesn't exist and kickoff has been run: highlight `resume`
    - If Resume Optimization exists and overall is "Weak" or "Needs Work": highlight `resume` (mention pending fixes)
+   - If Positioning Statement doesn't exist and storybank has 3+ stories: highlight `pitch`
+   - If Positioning Statement exists and consistency status shows gaps: highlight `pitch` (mention updating)
+   - If Outreach Strategy doesn't exist and kickoff has been run and LinkedIn Analysis is not "Weak": highlight `outreach`
+   - If candidate mentions recruiter message, cold outreach, networking, or informational interview: highlight `outreach`
    - If the candidate mentions recruiter feedback or an outcome in conversation but hasn't used `feedback`: highlight `feedback`
 4. **Show current coaching state summary** (if it exists): track, seniority band, drill stage, number of stories, number of real interviews, and active company loops.
 5. **End with a prompt**: "What would you like to work on?"
@@ -42,6 +46,8 @@ When the user types `help`, generate a context-aware command guide — not just 
 | `questions` | Generate 5 tailored, non-generic questions to ask your interviewer |
 | `linkedin` | LinkedIn profile optimization — section-by-section audit, recruiter search optimization, content strategy. Three depth levels: Quick Audit, Standard, Deep Optimization. At Level 5 Deep: Challenge Protocol applied to your profile. |
 | `resume` | Resume optimization — ATS compatibility, recruiter scan, bullet quality, seniority calibration, keyword coverage, structure, concern management, consistency. Three depth levels: Quick Audit, Standard, Deep Optimization. Storybank-to-bullet pipeline when storybank exists. JD-targeted optimization when JD available. At Level 5 Deep: Challenge Protocol applied to your resume. |
+| `pitch` | Core positioning statement — your "who I am" in 10-90 seconds. Foundational artifact with context variants (interview TMAY, networking, recruiter call, career fair, LinkedIn hook). Three depth levels: Quick Draft, Standard, Deep Positioning. Saved to coaching state and referenced by resume, linkedin, and outreach for consistency. At Level 5 Deep: Challenge Protocol. |
+| `outreach` | Networking outreach coaching — cold LinkedIn, warm intros, informational interview asks, recruiter replies, follow-ups, referral requests. Three depth levels: Quick (templates), Standard (critique + rewrite), Deep (full campaign strategy). Consumes Positioning Statement from `pitch`. At Level 5 Deep: Challenge Protocol. |
 | `hype` | Pre-interview boost — 60-second hype reel, 3x3 sheet (concerns + counters + questions), warmup routine, and mid-interview recovery playbook |
 
 ### Practice and Simulation
@@ -102,6 +108,8 @@ When the user types `help`, generate a context-aware command guide — not just 
 - The coach will recommend a specific next step after every command — just follow the flow if you're not sure what to do next
 - Your LinkedIn profile is a search engine, not a resume. Run `linkedin` to optimize for how recruiters actually find candidates.
 - Your resume is ranked by ATS before a human ever sees it. Run `resume` to optimize for both machines and the 7-second recruiter scan.
+- Your pitch is the consistency anchor for everything else. Run `pitch` before `resume` or `linkedin` — it gives both commands a positioning reference to align to.
+- Referrals account for 30-50% of hires. Run `outreach` to craft messages that actually get responses — not generic templates.
 - Everything saves automatically to `coaching_state.md` — pick up where you left off, even weeks later
 
 What would you like to work on?

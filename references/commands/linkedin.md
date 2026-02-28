@@ -69,6 +69,7 @@ Pull from coaching_state.md:
 - Resume Analysis (positioning strengths, concerns, story seeds)
 - Storybank (for earned secrets that should surface in About/Experience)
 - Active Coaching Strategy (bottleneck — if Differentiation is the gap, emphasize that in LinkedIn too)
+- Positioning Statement (if exists — use as consistency reference for headline and about rewrite)
 
 ### Step 3: Section-by-Section Audit (9 sections)
 
@@ -79,6 +80,7 @@ For each section, evaluate against its specific purpose:
 - Is it specific enough to differentiate (not "Passionate Leader" — concrete skills/domain)?
 - Does it signal seniority appropriately?
 - Character limit: 220 chars. Every word must earn its place.
+- If Positioning Statement exists: cross-reference. The headline should echo the positioning's key differentiator. Flag misalignment.
 - Provide a rewritten headline with rationale.
 
 **2. Current Title + Company** (search weight)
@@ -98,6 +100,7 @@ For each section, evaluate against its specific purpose:
 - Does it tell a narrative, or is it a bullet list of skills? (Narrative wins.)
 - Does it surface earned secrets or a spiky POV from the storybank?
 - Is there a clear "what I do + what makes me different + what I'm looking for" structure?
+- If Positioning Statement exists: the About opening (above-fold) should align with the LinkedIn Summary Hook variant. Flag misalignment and provide aligned rewrite.
 - Provide a rewritten About with rationale.
 
 **5. Experience Descriptions** (search + depth)

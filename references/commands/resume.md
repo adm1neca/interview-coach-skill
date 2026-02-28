@@ -72,6 +72,7 @@ Pull from coaching_state.md:
 - Active Coaching Strategy (bottleneck — if Differentiation is the gap, emphasize that in resume too)
 - LinkedIn Analysis (if exists — for cross-surface consistency at Deep level)
 - Interview Loops (for JDs — enables targeted optimization)
+- Positioning Statement (if exists — use as consistency reference for summary rewrite)
 
 ### Step 3: ATS Compatibility Scan
 
@@ -104,6 +105,7 @@ Rate: **Strong** / **Moderate** / **Weak**
 - Target role alignment — is it clear what they're going for?
 - Earned secret or spiky POV present? (From storybank if available)
 - Summary vs. objective (summary outperforms objective by 340% in callbacks)
+- If Positioning Statement exists in coaching state: cross-reference. The summary should reinforce the core positioning. Flag misalignment and provide aligned rewrite.
 - **Provide**: Rewritten summary with rationale
 
 **2. Experience — Bullet Quality**
